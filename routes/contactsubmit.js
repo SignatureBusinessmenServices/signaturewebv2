@@ -17,7 +17,7 @@ router.post('/en/contactsubmit', (req, res, next) => {
       service: 'Gmail',
       auth: {
         user: 'signaturebusinessmenservices@gmail.com',
-        pass: '$ignaturepass2020'
+        pass: 'signaturepass2020'
       }
     });
 
@@ -79,7 +79,7 @@ router.post('/ar/contactsubmit', (req, res, next) => {
       service: 'Gmail',
       auth: {
         user: 'signaturebusinessmenservices@gmail.com',
-        pass: '$ignaturepass2020'
+        pass: 'signaturepass2020'
       }
     });
 
