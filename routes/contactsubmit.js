@@ -16,8 +16,8 @@ router.post('/en/contactsubmit', (req, res, next) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'webappjm2020',
-        pass: 'jmwebApp2020'
+        user: 'signaturebusinessmenservices@gmail.com',
+        pass: '$ignaturepass2020'
       }
     });
 
@@ -78,8 +78,8 @@ router.post('/ar/contactsubmit', (req, res, next) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'webappjm2020',
-        pass: 'jmwebApp2020'
+        user: 'signaturebusinessmenservices@gmail.com',
+        pass: '$ignaturepass2020'
       }
     });
 
