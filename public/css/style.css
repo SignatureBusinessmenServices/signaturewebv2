@@ -1,0 +1,302 @@
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+
+
+  .navbar-custom .nav-link {
+    color: black;
+}
+
+.navbar {
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+.navbar-brand img {
+
+  height: 60px;
+}
+
+.top-bar {
+  background: #0060af;
+  height: 30px;
+  margin: 0;
+}
+
+#top-row {
+  margin: 0;
+}
+
+  .navbar-nav li:hover {
+    background: #0060af;
+    border-radius: 2px;
+
+  }
+
+  .navbar-custom .nav-item:hover .nav-link {
+      color: white;
+  }
+
+  /* Dropdown Button */
+  /* .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  } */
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #0060af; color: white;}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #0060af;}
+
+
+  /* .view {
+  line-height: 1;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  } */
+
+
+
+  #message .modal-header {
+    background-color: #0060af;
+    color: white;
+  }
+  #message button {
+    background-color: #0060af;
+    color: white;
+  }
+
+  #sm-icons i {
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 40px;
+    background-color: white;
+    margin: 5px;
+    color: #0060af;
+
+    text-align: center;
+  }
+
+#contact-form {
+  height: 300px;
+  width: 90%;
+  }
+
+#contact-footer, #contact-footer input {
+  font-size: 12px;
+}
+
+
+#contact-form i {
+  font-size: 1rem;
+}
+
+#about img {
+  height: 280px;
+  width: 280px;
+}
+
+#serviced-offices p {
+  font-size: .75em
+}
+
+.sd-bar-icons {
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 50px;
+  width: 100px;
+  height: 90px;
+  background-color: #0060af;
+  margin: 5px;
+  color: white;
+  text-align: center;
+}
+
+#accordion .card-body i {
+  font-weight: bold;
+}
+
+#accordion .card-body {
+  font-weight: 400;
+  color: black;
+}
+
+#accordion a.collapsed::after {
+  content: 'Read More...';
+}
+#accordion a:not(.collapsed)::after {
+  content: 'Read Less...';
+}
+
+#faq .feature-title {
+  background-color: #0060af;
+  color: white;
+}
+
+#cms .feature-title {
+  background-color: light-grey;
+  color: dark-grey;
+}
+
+#cms p {
+  font-size: 13px;
+
+ }
+
+
+#blog p {
+  font-size: 15px;
+
+}
+
+/* ***********Arabic*************** */
+#nav-ar li a {
+  color: grey;
+  font-size: 15px;
+
+}
+
+#nav-ar li a:hover {
+  color: white;
+  font-size: 15px;
+
+}
+
+
+@media (max-width: 740px) {
+  .full-page-intro {
+    height: 1000px; }    }
+
+
+
+/* Full Page Carousel itself*/
+.carousel {
+  height: 80%;
+}
+
+.carousel .carousel-inner {
+    height: 100%; }
+
+.carousel .carousel-inner .carousel-item,
+.carousel .carousel-inner .active {
+      height: 100%; }
+
+.carousel-item p {
+  line-height: 1.5rem;
+}
+
+#front-content {
+  width: 50%;
+  margin-top: 40px;
+}
+
+
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 50%; }
+
+    #front-content {
+      width: 80%;
+      margin-top: 40px;
+      padding-bottom: 200px;
+    }
+
+
+     }
+
+/* Navbar animation */
+.navbar {
+  background-color: white; }
+
+.top-nav-collapse {
+  background-color: white; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: white;
+
+     }
+
+  .mask {
+    padding-bottom: 200px;
+  }
+
+
+   }
+
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #1C2331; }
+
+  @media (max-width: 992px) {
+
+
+      .navbar-collapse {
+          position: absolute;
+          top: 54px;
+          left: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-bottom: 15px;
+          margin-top: 15px;
+          width: 100%;
+          transition: all 0.4s ease;
+          display: block;
+          background: white;
+      }
+      .navbar-collapse.collapsing {
+          height: auto !important;
+          margin-left: 50%;
+          left: 50%;
+          transition: all 0.2s ease;
+      }
+      .navbar-collapse.show {
+          left: 0;
+      }
+
+      /* #front-content {
+        width: 90%;
+        margin-top: 40px;
+        padding-bottom: 0;
+      } */
+
+
+
+  }

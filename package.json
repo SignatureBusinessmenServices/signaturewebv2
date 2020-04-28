@@ -1,0 +1,26 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JM WebApp",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "heroku-ssl-redirect": "0.0.4",
+    "hjs": "0.0.6",
+    "hogan.js": "^3.0.2",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^5.9.10",
+    "nodemailer": "^6.4.5",
+    "sitemap": "^6.1.0",
+    "sortablejs": "^1.10.2"
+  }
+}
