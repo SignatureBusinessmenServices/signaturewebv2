@@ -14,7 +14,7 @@ router.post('/en/contactsubmit', (req, res, next) => {
     // })
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: 'Gmail',
       auth: {
         user: 'signaturebusinessmenservices@gmail.com',
         pass: '$ignaturepass2020'
@@ -76,7 +76,7 @@ router.post('/ar/contactsubmit', (req, res, next) => {
     // })
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: 'Gmail',
       auth: {
         user: 'signaturebusinessmenservices@gmail.com',
         pass: '$ignaturepass2020'
