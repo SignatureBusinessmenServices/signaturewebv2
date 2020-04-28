@@ -72,7 +72,7 @@ app.get('/sitemap.xml', function(req, res) {
   }
 })
 
-const http = require('http');
+// const http = require('http');
 // const https = require("https"),
 //   fs = require("fs");
 //
@@ -116,7 +116,7 @@ app.use('/', contactSubmit)
 
 // app.listen(8000, '192.168.1.217')
 
-app.listen(8000)
+app.listen(80)
 // https.createServer(options, app).listen(443);
 
 console.log('Server Running...')
