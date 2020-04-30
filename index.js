@@ -79,7 +79,7 @@ const https = require("https"),
   const options = {
     key: fs.readFileSync("/etc/letsencrypt/live/signature.ae/privkey.pem"),
     cert: fs.readFileSync("/etc/letsencrypt/live/signature.ae/fullchain.pem"),
-    passphrase: 'this is awesome'
+    // passphrase: 'this is awesome'
 
   };
 
