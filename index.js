@@ -79,7 +79,7 @@ const https = require("https"),
   const options = {
     key: fs.readFileSync("/etc/letsencrypt/live/signature.ae/privkey.pem"),
     cert: fs.readFileSync("/etc/letsencrypt/live/signature.ae/fullchain.pem"),
-    // passphrase: 'this is awesome'
+
 
   };
 
@@ -116,7 +116,7 @@ http.createServer(function (req, res) {
 
 // app.listen(8000, '192.168.1.217')
 
-// app.listen(80)
+
 https.createServer(options, app).listen(443);
 
 console.log('Server Running...')

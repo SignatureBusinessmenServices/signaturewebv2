@@ -27,11 +27,15 @@ body,
   margin: 0;
 }
 
-  .navbar-nav li:hover {
-    background: #0060af;
-    border-radius: 2px;
+.navbar-nav li:hover {
+  background: #0060af;
+  border-radius: 2px;
 
-  }
+}
+
+.navbar-custom .nav-item .nav-link {
+    color: grey;
+}
 
   .navbar-custom .nav-item:hover .nav-link {
       color: white;
@@ -64,7 +68,7 @@ body,
 
   /* Links inside the dropdown */
   .dropdown-content a {
-    color: black;
+    color: grey;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
