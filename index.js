@@ -72,16 +72,16 @@ app.get('/sitemap.xml', function(req, res) {
   }
 })
 
-// const http = require('http');
-// const https = require("https"),
-//   fs = require("fs");
-//
-//   const options = {
-//     key: fs.readFileSync("/etc/letsencrypt/live/signature.ae/privkey.pem"),
-//     cert: fs.readFileSync("/etc/letsencrypt/live/signature.ae/fullchain.pem"),
-//
-//
-//   };
+const http = require('http');
+const https = require("https"),
+  fs = require("fs");
+
+  const options = {
+    key: fs.readFileSync("/etc/letsencrypt/live/signature.ae/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/signature.ae/fullchain.pem"),
+
+
+  };
 
 app.use('/en',express.static(path.join(__dirname, 'public')))
 app.use('/ar',express.static(path.join(__dirname, 'public')))
@@ -107,16 +107,16 @@ app.use('/', contactSubmit)
 // Redirect from http port 80 to https
 
 
-// http.createServer(function (req, res) {
-//     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-//     res.end();
-// }).listen(80);
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
 
 
 
-app.listen(8000, '192.168.1.217')
+// app.listen(8000, '192.168.1.217')
 
 
-// https.createServer(options, app).listen(443);
+https.createServer(options, app).listen(443);
 
 console.log('Server Running...')
