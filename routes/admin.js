@@ -41,7 +41,7 @@ router.post('/resetpassword', (req, res, next) => {
         user.save()
 
         const transporter = nodemailer.createTransport({
-          service: 'gmail',
+          service: 'Gmail',
           auth: {
             user: 'signaturebusinessmenservices@gmail.com',
             pass: 'signaturepass2020'
