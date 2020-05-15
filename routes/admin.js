@@ -3,6 +3,7 @@ const router = express.Router()
 const nodemailer = require('nodemailer')
 const passport = require ('passport')
 const UserSign = require('../models/User')
+const Settings = require('../models/settings')
 const bcrypt = require('bcryptjs')
 const randomString = (length) => {
     let text = ''
@@ -16,9 +17,12 @@ const randomString = (length) => {
 
 router.get('/admin', (req, res, next) => {
 
-  res.render('login', { message: req.flash ('message') })
+  Settings.findOne((err,settings) => {
+
+  res.render('login', { settings: settings, message: req.flash ('message') })
   // res.json ({ message: req.flash ('message') })
     })
+  })
 
 
 
@@ -39,18 +43,17 @@ router.post('/resetpassword', (req, res, next) => {
         const transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'webappjm2020@gmail.com',
-            pass: 'jmwebApp2020'
+            user: 'signaturebusinessmenservices@gmail.com',
+            pass: 'signaturepass2020'
           }
         });
 
         const data = {
             to: req.body.email,
-            from: 'webappjm2020@gmail.com',
-            sender: 'Sample Store',
+            from: '"Signature" <signature.ae>',
             subject: 'Password Reset Request',
             // html: 'Please click <a style="color:red" href="http://192.168.1.217:8000/password-reset?nonce=' + user.nonce + '&id=' + user._id + '">HERE</a> to reset your password. This link is valid for 24 hours.'
-            html: 'Please click <a style="color:red" href="https://jmwebapps.com/password-reset?nonce=' + user.nonce + '&id=' + user._id + '">HERE</a> to reset your password. This link is valid for 24 hours.'
+            html: 'Please click <a style="color:red" href="https://signature.ae/password-reset?nonce=' + user.nonce + '&id=' + user._id + '">HERE</a> to reset your password. This link is valid for 24 hours.'
         }
 
         transporter.sendMail(data, (error, info) => {
@@ -78,14 +81,11 @@ router.get('/password-reset', (req, res, next) => {
         return next(new Error('Invalid Request'))
     }
 
-
+      Settings.findOne((err,settings) => {
               //res.redirect('/assetlist')
-              res.render('reset', {layout: 'layoutadmin', user: req.user,})
+              res.render('reset', {layout: 'layoutadmin', settings: settings, user: req.user,})
+            })
           })
-
-
-
-
 
 router.post('/password-reset', (req, res, next) => {
 

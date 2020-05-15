@@ -159,7 +159,6 @@ app.use('/', settings)
 
 // Redirect from http port 80 to https
 
-
 http.createServer(function (req, res) {
     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
     res.end();

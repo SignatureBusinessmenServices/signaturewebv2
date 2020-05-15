@@ -136,8 +136,9 @@
 
                     <div class="form-group px-3 row">
                       <label for="topbaractive" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Status:</label>
-                      <select class="form-control col-lg-9 col-md-12 form-control-sm" id="topbaractive" name="topbaractive" placeholder="Promo Bar Content" value='<%= settings.topbaractive %>'>
-                        <option value="Active">Active</option>
+                      <select class="form-control col-lg-9 col-md-12 form-control-sm" id="topbaractive" name="topbaractive" placeholder="Promo Bar Content" value=''>
+                        <option value="<%= settings.topbaractive %>"><%= settings.topbaractive %></option>
+                          <option value="Active">Active</option>
                           <option value="Disabled">Disabled</option>
                       </select>
                     </div>
