@@ -80,7 +80,7 @@ router.get('/password-reset', (req, res, next) => {
 
 
               //res.redirect('/assetlist')
-              res.render('reset')
+              res.render('reset', {layout: 'layoutadmin', user: req.user,})
           })
 
 

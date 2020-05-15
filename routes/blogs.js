@@ -53,7 +53,7 @@ router.get('/add', (req, res, next) => {
 
   User.find((err, users) => {
 
-    res.render('blogadd', {users: users, layout: 'layoutadmin'})
+    res.render('blogadd', {users: users, user: req.user, layout: 'layoutadmin'})
 })
 })
 
@@ -77,7 +77,7 @@ router.get('/bloglistedit', (req, res, next) => {
 
     blog.find((err, blogs)=>{
 
-    res.render('bloglisteditpage', {blogs: blogs, users: users, layout: 'layoutadmin'})
+    res.render('bloglisteditpage', {blogs: blogs, user: req.user, users: users, layout: 'layoutadmin'})
     // res.json({blogs: blogs})
   }).sort({timestamp: -1})
 })
@@ -125,7 +125,7 @@ router.get('/blogupdate/:_id', (req, res, next) => {
 
   blog.find(id, (err, blogs)=>{
 
-    res.render('blogupdate', {blogs: blogs, users: users, layout: 'layoutadmin'})
+    res.render('blogupdate', {blogs: blogs, user: req.user, users: users, layout: 'layoutadmin'})
     // res.json({blogs: blogs})
   })
 })
@@ -176,7 +176,7 @@ router.post('/newblog', async (req,res) => {
 
       } else if (req.file == undefined) {
 
-          res.render('blogadd', {layout: 'layoutadmin', users: users, msg: '<h5 class="text-left btn-warning rounded pl-4 py-2">Error: No Image Selected!</h5>'})
+          res.render('blogadd', {layout: 'layoutadmin', user: req.user, users: users, msg: '<h5 class="text-left btn-warning rounded pl-4 py-2">Error: No Image Selected!</h5>'})
 
         } else {
 

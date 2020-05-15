@@ -22,7 +22,7 @@ router.get('/users', (req, res, next) => {
 
         User.findById( user, (err, users) => {
 
-        res.render('adminhomepage', {layout: 'layoutadmin', users: users, msg: '<h5 class="text-left btn-warning rounded py-2 pl-4 my-2 mr-1">Error: You do not have access to this page!</h5>'})
+        res.render('adminhomepage', {layout: 'layoutadmin', users: users, user: req.user, msg: '<h5 class="text-left btn-warning rounded py-2 pl-4 my-2 mr-1">Error: You do not have access to this page!</h5>'})
         // res.redirect('/admin')
         return
         })
@@ -31,7 +31,7 @@ router.get('/users', (req, res, next) => {
 
     User.find((err, users) => {
 
-    res.render('users', { users: users, layout: 'layoutadmin'})
+    res.render('users', { users: users, user: req.user, layout: 'layoutadmin'})
     // res.json({blogs: blogs})
   }).sort({timestamp: -1})
 }
@@ -53,7 +53,7 @@ router.get('/adduser', (req, res, next) => {
 
   User.find((err, users) => {
 
-    res.render('adduser', {users: users, layout: 'layoutadmin'})
+    res.render('adduser', {users: users, user: req.user, layout: 'layoutadmin'})
 })
 }
 })
@@ -94,7 +94,7 @@ router.post('/newuser', (req, res, next) => {
       User.create(newuser, (err, newuser) => {
         if(err) {
 
-        res.render('adduser', {layout: 'layoutadmin', users: users, msg: '<h5 class="text-left btn-warning rounded py-2 pl-4 my-2 mr-1">Error: User already exists!</h5>'})
+        res.render('adduser', {layout: 'layoutadmin', users: users, user: req.user, msg: '<h5 class="text-left btn-warning rounded py-2 pl-4 my-2 mr-1">Error: User already exists!</h5>'})
       } else {
 
         res.redirect('/users')
@@ -128,7 +128,7 @@ router.get('/edituser/:_id', (req, res, next) => {
 
   User.find(id, (err, users)=>{
 
-    res.render('edituser', {users: users, layout: 'layoutadmin'})
+    res.render('edituser', {users: users, user: req.user, layout: 'layoutadmin'})
     // res.json({blogs: blogs})
   })
 }

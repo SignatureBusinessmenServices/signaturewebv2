@@ -93,6 +93,7 @@
       </button>
 
 
+
       <!-- Links -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -107,15 +108,21 @@
           <!-- <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a class="nav-link font-weight-bold" href="/bloglistedit" target="">Blogs</a>
           </li> -->
-          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link font-weight-bold" href="/users" target="">Users</a>
-          </li>
+
+
+          <% if (user.isSuperAdmin) { %>
+            <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a class="nav-link font-weight-bold" href="/users" target="" >Users</a>
+            </li>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a class="nav-link font-weight-bold" href="/settingsupdate" target="" >Business Settings</a>
           </li>
+          <% } %>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a class="nav-link font-weight-bold" href="/logout" target="" >Logout</a>
           </li>
+
+
           <!-- <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
             <a class="nav-link font-weight-bold" href="/en/cms" target="" >CMS</a>
           </li> -->
@@ -134,11 +141,17 @@
 
 
       </div>
-
+      <% if (user) { %>
+        <div class="nav-item">
+          <a class="black-text">| Hi <%= user.username %>! </a>
+        </div>
+      <% } %>
     </div>
   </div>
+
   </nav>
   <!-- Navbar -->
+
 
   <%- body %>
 

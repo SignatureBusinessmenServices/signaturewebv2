@@ -23,7 +23,7 @@ router.get('/adminpage', (req, res, next) => {
             return next(err)
 
 
-          res.render('adminhomepage', {users: users, layout: 'layoutadmin'})
+          res.render('adminhomepage', {users: users, user: req.user, layout: 'layoutadmin'})
       // res.json({users: users})
 
   })
@@ -32,8 +32,7 @@ router.get('/adminpage', (req, res, next) => {
   router.get('/logout', (req, res, next) => {
       req.logout()
       res.redirect('/admin')
-
-  })
+    })
 
 
 

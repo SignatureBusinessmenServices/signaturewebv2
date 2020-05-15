@@ -55,7 +55,7 @@ router.get('/addtestimonial', (req, res, next) => {
 
   User.find((err, users) => {
 
-    res.render('addtestimonial', {users: users, layout: 'layoutadmin'})
+    res.render('addtestimonial', {users: users, user: req.user, layout: 'layoutadmin'})
 })
 })
 
@@ -78,11 +78,11 @@ router.post('/newtestimonial', async (req,res) => {
   upload(req, res, (err) => {
       if(err){
         // res.redirect('/add')
-        res.render('addtestimonial', {layout: 'layoutadmin', users: users, msg: err})
+        res.render('addtestimonial', {layout: 'layoutadmin', users: users,user: req.user, msg: err})
 
       } else if (req.file == undefined) {
 
-          res.render('addtestimonial', {layout: 'layoutadmin', users: users, msg: '<h5 class="text-left btn-warning rounded pl-4 mt-3 py-2">Error: No Image Selected!</h5>'})
+          res.render('addtestimonial', {layout: 'layoutadmin', users: users, user: req.user, msg: '<h5 class="text-left btn-warning rounded pl-4 mt-3 py-2">Error: No Image Selected!</h5>'})
 
         } else {
 
@@ -132,7 +132,7 @@ router.get('/testimonialslist', (req, res, next) => {
 
     Testimonials.find((err, testimonials)=>{
 
-    res.render('testimonialslist', {testimonials: testimonials, users: users, layout: 'layoutadmin'})
+    res.render('testimonialslist', {testimonials: testimonials, users: users, user: req.user, layout: 'layoutadmin'})
     // res.json({testimonials: testimonials})
   }).sort({timestamp: -1})
 })
@@ -159,7 +159,7 @@ router.get('/testimonialupdate/:_id', (req, res, next) => {
 
   Testimonials.find(id, (err, testimonials)=>{
 
-    res.render('testimonialupdate', {testimonials: testimonials, users: users, layout: 'layoutadmin'})
+    res.render('testimonialupdate', {testimonials: testimonials, users: users, user: req.user, layout: 'layoutadmin'})
     // res.json({blogs: blogs})
   })
 })
