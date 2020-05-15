@@ -1,0 +1,65 @@
+<div class=" container my-5 py-5" style="min-height: 100vh;">
+        <!--Grid row-->
+    <div class="text-left pt-4">
+      <div class="row">
+      <div class="col-8">
+      <h3 class="feature-title"><strong>Blogs List</strong></h3>
+      </div>
+      <div class="col-4 text-right">
+      <a class="btn btn-success btn-sm m-0 rounded" href="/add">Add</a>
+      </div>
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/adminpage">Home</a></li>
+          <li class="breadcrumb-item"><a>Blogs List</a></li>
+
+
+        </ol>
+
+      </nav>
+    </div>
+    <div>
+
+    </div>
+          <!--Grid row-->
+    <div class="row mt-4 px-3">
+
+      <table id="paginationNumbers" class="table" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Date
+          </th>
+          <th class="th-sm">Title
+          </th>
+          <th class="th-sm">Headline
+          </th>
+          <th class="th-sm">Action
+          </th>
+          <th class="th-sm d-none">Id
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% blogs.forEach(function( eachBlog) { %>
+        <tr>
+          <td><strong><%= eachBlog.date %></strong></td>
+          <td><strong><%= eachBlog.title %></strong></td>
+          <td><%= eachBlog.headline %></td>
+          <td>
+            <div class="row text-center">
+
+            <a class="btn btn-primary btn-sm" href="/blogupdate/<%= eachBlog._id %>">Edit</a>
+            </div>
+          </td>
+          <td class="d-none"><%= eachBlog._id %></td>
+        </tr>
+          <% }) %>
+      </tbody>
+      </table>
+  </div>
+
+
+
+</div>

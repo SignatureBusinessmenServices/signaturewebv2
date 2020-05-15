@@ -1,0 +1,49 @@
+
+
+
+<div class=" my-5 p-5">
+        <!--Grid row-->
+    <div class="text-left pt-5">
+      <% blogs.forEach(function( eachBlog) { %><h3 class="feature-title"><strong><%= eachBlog.title %></strong></h3><% }) %>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/bloglistedit">Blogs List</a></li>          
+          <% blogs.forEach(function( eachBlog) { %><li class="breadcrumb-item active" aria-current="page"><%= eachBlog.title %></li><% }) %>
+        </ol>
+      </nav>
+    </div>
+          <!--Grid row-->
+    <div class="row mt-1">
+
+      <div class="col-12">
+        <% blogs.forEach(function( eachBlog) { %>
+        <div class="row">
+          <div class="col-12">
+
+              <div class="">
+                  <div class="row">
+                  <div class="col-12 text-center">
+                    <img class="img-fluid p-3" src=<%= eachBlog.blogImage %>>
+                  </div>
+                  <div class="col-12 text-center">
+                    <div class="p-3">
+                    <h1><%= eachBlog.title %></h1>
+                    <p class="blue-text"><%= eachBlog.date %></p>
+                    <p class="pr-3"> <%= eachBlog.headline %></p>
+
+                    <div> <%- eachBlog.details %>
+                    </div>
+                    </div>
+
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+              </div>
+            </div>
+              <% }) %>
+
+          </div>
+
+    </div>

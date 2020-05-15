@@ -8,6 +8,7 @@
   <!-- <meta name="keywords" content="HTML, Web Applicaations, Online Software, CSS, Javascript, Website, Website Developer, Hosting, UAE Website, Website Support, Website Services, Online"> -->
   <meta name="description" content="Signature Dubai Business Set-up and Serviced Offices - our 10 years of experience can help your business grow.">
   <title>Signature Serviced Offices & Business Set-Up Dubai</title>
+  <link rel="icon" href="img/favicon.ico" type="image/ico">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Google Fonts -->
@@ -52,12 +53,19 @@
           }
   </style>
 
+  <!-- SummerNote -->
+
+  <link href="css/summernote-bs4.min.css" rel="stylesheet">
+  <link href="css/font/summernote.ttf" rel="stylesheet">
+
+  <!-- DataTables -->
+  <!-- MDBootstrap Datatables  -->
+  <link href="css/addons/datatables2.min.css" rel="stylesheet">
 
 </head>
 <body>
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v6.0"></script>
-
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v7.0"></script>
   <!-- Navbar -->
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
@@ -175,7 +183,6 @@
 </div>
 <!-- Modal -Other -->
 
-
   <%- body %>
 
   <!--Footer-->
@@ -239,7 +246,7 @@
                 <div class="col-12 text-left">
                   <h6 class="mb-3"><strong>Get In Touch</strong></h6>
                   <p class="mb-3 grey-text">Large, medium or small, we have solutions for all types of businesses.</p>
-                  <p><a href="tel:+97143116500" class="grey-text"><i class="fas fa-phone"></i>&nbsp; +971 4 311 6500 </a></p>
+                  <p><a href="tel:+9714 311 6500" class="grey-text"><i class="fas fa-phone"></i>&nbsp; +971 4 311 6500 </a></p>
                   <p><a href="mailto:info@signature.ae" class="grey-text"><i class="far fa-envelope"></i>&nbsp; info@signature.ae</a> </p>
                   <h6><strong>Visit Us</strong></h6>
                   <p class="grey-text">Burj Al Salam </br> Level 25 </br> Sheikh Zayed Road, Dubai </p>
@@ -408,6 +415,45 @@
         });
       </script> -->
       <!-- Modal On Load Once Per Day-->
+
+
+      <!-- SummerNote -->
+      <!-- <script type="text/javascript" src="js/summernote-bs4.min.js"></script>
+      <script>
+      $(document).ready(function() {
+        $('#summernote').summernote({
+       placeholder: '',
+       tabsize: 2,
+       height: 500,
+       // toolbar: [
+       //   ['style', ['style']],
+       //   ['font', ['bold', 'underline', 'clear']],
+       //   ['color', ['color']],
+       //   ['para', ['ul', 'ol', 'paragraph']],
+       //   ['table', ['table']],
+       //   ['insert', ['link', 'picture', 'video']],
+       //   ['view', ['fullscreen', 'codeview', 'help']]
+       // ]
+     });
+      });
+      </script>
+      <script>
+      $('.editor').summernote('code');
+      </script> -->
+
+      <!-- MDBootstrap Datatables  -->
+      <script type="text/javascript" src="js/addons/datatables2.min.js"></script>
+      <script>
+        $(document).ready(function () {
+      //Pagination numbers
+      $('#paginationNumbers').DataTable({
+        "pagingType": "numbers"
+      });
+      });
+      </script>
+
+
+
 
 
 </body>

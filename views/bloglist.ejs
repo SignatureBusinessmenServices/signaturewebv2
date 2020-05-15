@@ -1,0 +1,50 @@
+
+
+
+<div class="container my-5 p-5">
+        <!--Grid row-->
+    <div class="text-left pt-5">
+      <h3 class="feature-title"><strong>More News at Signature</strong></h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/en/blog">Blogs Home</a></li>
+          <li class="breadcrumb-item">Blog List</li>
+        </ol>
+      </nav>
+    </div>
+          <!--Grid row-->
+    <div class="row mt-4 pl-3">
+
+      <table id="paginationNumbers" class="table" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Date
+          </th>
+          <th class="th-sm">Title
+          </th>
+          <th class="th-sm">Headline
+          </th>
+          <th class="th-sm">Action
+          </th>
+          <th class="th-sm d-none">Id
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% blogs.forEach(function( eachBlog) { %>
+        <tr>
+          <td><%= eachBlog.date %></td>
+          <td><%= eachBlog.title %></td>
+          <td><%= eachBlog.headline %></td>
+          <td><a class="btn btn-primary btn-sm" href="/en/bloglist/<%= eachBlog._id %>">View</a></td>
+          <td class="d-none"><%= eachBlog._id %></td>
+        </tr>
+          <% }) %>
+      </tbody>
+      </table>
+  </div>
+
+
+
+</div>

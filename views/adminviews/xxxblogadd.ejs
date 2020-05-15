@@ -1,0 +1,54 @@
+<div class=" my-5 p-5">
+  <div class="text-left pt-5">
+    <h3 class="feature-title"><strong>Add New Blog</strong></h3>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/bloglistedit">Blogs List</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add New</li>
+      </ol>
+    </nav>
+  </div>
+<div class="col-12">
+
+  <form method="post" action="/newblog" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col-12">
+
+        <div class="mt-5">
+            <div class="w-100">
+              <div class="p-3">
+                <div>
+                </div>
+              <label class="pl-3" for="imageinput">Upload New Image</label>
+              <input type="file" id="imageinput" name="blogImage"/>
+              </div>
+
+            <div class="col-12">
+              <div class="p-3">
+              <label for="title">Title:</label>
+              <h1><input type="text" class="w-100" name="title" id="title" placeholder="Title"></input></h1>
+              <label for="date">Date:</label>
+              <p class="blue-text"><input style="width: 100%; type="text" id="date" name="date" placeholder="Date"></input></p>
+              <label for="headline">Headline:</label>
+              <textarea style="width: 100%;" id="headline" name="headline" placeholder="Headline"></textarea>
+
+              <div>
+                <label for="details">Enter the rest of the information here:</label>
+                <textarea id="summernote" name="details" id="details" placeholder=" "></textarea>
+              </div>
+
+              <button class="btn btn-primary ml-0">Submit</button>
+
+              </div>
+
+            </div>
+            </div>
+            </div>
+            </div>
+
+        </div>
+
+      </form>
+
+      </div>
+    </div>

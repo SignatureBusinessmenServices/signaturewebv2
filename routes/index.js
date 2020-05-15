@@ -1,6 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
+const blog = require('../models/blogs')
+const Testimonial = require('../models/testimonials')
+const Settings = require('../models/settings')
+
 router.get('/', (req, res, next) => {
 
     res.redirect('/en')
@@ -8,7 +12,9 @@ router.get('/', (req, res, next) => {
 
 router.get('/en', (req, res, next) => {
 
-    res.render('index', {layout: 'layouten'})
+    Settings.findOne((err,settings) => {
+      res.render('index', {layout: 'layouten', settings: settings})
+    })
 })
 
 router.get('/en/offices', (req, res, next) => {
@@ -26,9 +32,30 @@ router.get('/en/cms', (req, res, next) => {
     res.render('cms', {layout: 'layouten'})
 })
 
-router.get('/en/blog', (req, res, next) => {
+router.get('/en/bloglist', (req, res, next) => {
+  blog.find((err, blogs)=>{
 
-    res.render('blogs', {layout: 'layouten'})
+    res.render('bloglist', {blogs: blogs, layout: 'layouten'})
+    // res.json({blogs: blogs})
+  }).sort({timestamp: -1})
+})
+
+router.get('/en/bloglist/:_id', (req, res, next) => {
+  const id = req.params
+
+  blog.find(id, (err, blogs)=>{
+
+    res.render('blogitem', {blogs: blogs, layout: 'layouten'})
+    // res.json({blogs: blogs})
+  })
+})
+
+router.get('/en/blog', (req, res, next)=>{
+    blog.find((err, blogs)=>{
+
+      res.render('blogs', {blogs: blogs, layout: 'layouten'})
+      // res.json({blogs: blogs})
+    }).sort({timestamp: -1}).limit(3)
 })
 
 router.get('/en/about', (req, res, next) => {
@@ -36,15 +63,27 @@ router.get('/en/about', (req, res, next) => {
     res.render('about', {layout: 'layouten'})
 })
 
-router.get('/en/testimonials', (req, res, next) => {
+// router.get('/en/testimonials', (req, res, next) => {
+//
+//     res.render('testimonials', {layout: 'layouten'})
+// })
 
-    res.render('testimonials', {layout: 'layouten'})
+router.get('/en/testimonials', (req, res, next)=>{
+    Testimonial.find((err, testimonials)=>{
+
+      res.render('testimonials', {testimonials: testimonials, layout: 'layouten'})
+      // res.json({blogs: blogs})
+    }).sort({timestamp: -1}).limit(4)
 })
 
 router.get('/en/faqs', (req, res, next) => {
 
     res.render('faqs', {layout: 'layouten'})
 })
+
+
+
+
 
 
 // Arabic
@@ -79,9 +118,17 @@ router.get('/ar/about', (req, res, next) => {
     res.render('arviews/about', {layout: 'layoutar'})
 })
 
-router.get('/ar/testimonials', (req, res, next) => {
+// router.get('/ar/testimonials', (req, res, next) => {
+//
+//     res.render('arviews/testimonials', {layout: 'layoutar'})
+// })
 
-    res.render('arviews/testimonials', {layout: 'layoutar'})
+router.get('/ar/testimonials', (req, res, next)=>{
+    Testimonial.find((err, testimonials)=>{
+
+      res.render('arviews/testimonials', {testimonials: testimonials, layout: 'layoutar'})
+      // res.json({blogs: blogs})
+    }).sort({timestamp: -1}).limit(4)
 })
 
 router.get('/ar/faqs', (req, res, next) => {

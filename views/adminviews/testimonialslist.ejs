@@ -1,0 +1,63 @@
+<div class="container my-5 py-5" style="min-height: 100vh;">
+        <!--Grid row-->
+    <div class="text-left pt-4">
+      <div class="row">
+      <div class="col-8">
+      <h3 class="feature-title"><strong>Testimonials List</strong></h3>
+      </div>
+      <div class="col-4 text-right">
+      <a class="btn btn-success btn-sm m-0 rounded" href="/addtestimonial">Add</a>
+      </div>
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/adminpage">Home</a></li>
+          <li class="breadcrumb-item"><a>Testimonial List</a></li>
+        </ol>
+
+      </nav>
+    </div>
+    <div>
+
+    </div>
+          <!--Grid row-->
+    <div class="mt-4 px-3">
+
+      <table id="paginationNumbers" class="table" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Company
+          </th>
+          <th class="th-sm">Commented By:
+          </th>
+          <th class="th-sm">Created On
+          </th>
+          <th class="th-sm">Action
+          </th>
+          <th class="th-sm d-none">Id
+          </th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% testimonials.forEach(function( eachTestimonial) { %>
+        <tr>
+          <td><strong><%= eachTestimonial.company %></strong></td>
+          <td><%= eachTestimonial.person %></td>
+          <td><%= eachTestimonial.timestamp %></td>
+          <td>
+            <div class="row text-center">
+
+            <a class="btn btn-primary btn-sm" href="/testimonialupdate/<%= eachTestimonial._id %>">Edit</a>
+            </div>
+          </td>
+          <td class="d-none"><%= eachTestimonial._id %></td>
+        </tr>
+          <% }) %>
+      </tbody>
+      </table>
+  </div>
+
+
+
+</div>

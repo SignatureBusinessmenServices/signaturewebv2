@@ -1,0 +1,84 @@
+<div class=" my-5 py-5" style="min-height: 100vh;">
+<div class="container">
+
+  <div class="text-left p-3">
+
+    <h3 class="feature-title"><strong>Add New Blog</strong></h3>
+
+    </div>
+
+
+<div class="col-12 mb-3">
+  <form method="post" action="/newblog" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="w-100">
+              <div class="p-3">
+
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/adminpage">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/bloglistedit">Blogs List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add New</li>
+                  </ol>
+                </nav>
+
+              </div>
+
+            <div class="row px-4">
+            <div class="col-12 px-5">
+
+                <div class="form-group row">
+                    <div class="p-0 col-12">
+                     <%- typeof msg != 'undefined' ? msg: '' %>
+                    </div>
+
+
+                    <label class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0" for="imageinput">Add Image: </label>
+                    <input class="bg-light form-control col-lg-9 col-md-12 form-control-sm py-0" type="file" id="imageinput" name="blogImage" value=""/>
+                </div>
+
+                <div class="form-group row">
+                  <label for="title" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="title" id="title" placeholder="Title" value=''></input>
+                </div>
+
+                <div class="form-group row">
+                  <label for="date" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Date:</label>
+                  <input class="form-control col-lg-9 col-md-12 form-control-sm" type="text" id="date" name="date" placeholder="Date" value=''></input>
+                </div>
+
+                <div class="form-group row">
+                  <label for="headline" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Headline:</label>
+                  <textarea class="form-control col-lg-9 col-md-12 form-control-sm" id="headline" name="headline" placeholder="Headline" value=''></textarea>
+                </div>
+
+                <div class="form-group row">
+                  <label for="details" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Enter the rest of the information here:</label>
+                  <textarea id="summernote" class="summernote col-lg-9 col-md-12 form-control form-control-sm" name="details" id="details" placeholder=" " value=''></textarea>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+            </div>
+            <button class="btn btn-primary my-3 mx-5 float-right rounded">Submit</button>
+            </div>
+            </div>
+            </div>
+
+        </div>
+
+      </form>
+
+      </div>
+
+    </div>
+    </div>

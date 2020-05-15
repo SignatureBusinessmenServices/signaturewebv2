@@ -1,0 +1,83 @@
+<div class=" my-5 py-5" style="min-height: 100vh;">
+<div class="container">
+<div>
+    <div class="p-0 col-12">
+   <%- typeof msg != 'undefined' ? msg: '' %>
+  </div>
+
+</div>
+
+
+
+        <!--Grid row-->
+    <div class="text-left pt-3">
+      <div class="row">
+      <div class="col-8">
+      <h3 class="feature-title"><strong>Admin Home Page</strong></h3>
+      </div>
+      <div class="col-4 text-right">
+      <h5 class="text-right">Welcome! <%= users.username %> </h5>
+      </div>
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a>Home</a></li>
+
+
+        </ol>
+
+      </nav>
+    </div>
+    <div>
+
+    </div>
+          <!--Grid row-->
+    <div class="mt-4 px-3">
+
+      <table id="paginationNumbers" class="table" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">No.
+          </th>
+          <th class="th-sm">Page URL
+          </th>
+          <th class="th-sm">Description
+          </th>
+          <th class="th-sm">Language
+          </th>
+          <th class="th-sm">Action
+          </th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>/testimonials</td>
+          <td>Client testimonial reource</td>
+          <td>English / Arabic</td>
+          <td>
+            <div class="row text-center">
+            <a class="btn btn-primary btn-sm" href="/testimonialslist">Manage</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td><strong>2</strong></td>
+          <td>/blogs</td>
+          <td>Blogs and announcements resource</td>
+          <td>English</td>
+          <td>
+            <div class="row text-center">
+            <a class="btn btn-primary btn-sm" href="/bloglistedit">Manage</a>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+      </table>
+  </div>
+</div>
+  </div>

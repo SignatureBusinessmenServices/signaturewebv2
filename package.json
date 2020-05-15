@@ -9,19 +9,30 @@
   "author": "JM WebApp",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
     "fs": "0.0.1-security",
+    "gridfs-stream": "^1.1.1",
     "heroku-ssl-redirect": "0.0.4",
     "hjs": "0.0.6",
     "hogan.js": "^3.0.2",
     "mailgun-js": "^0.22.0",
     "mongoose": "^5.9.10",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.0.3",
     "nodemailer": "^6.4.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sitemap": "^6.1.0",
-    "sortablejs": "^1.10.2"
+    "sortablejs": "^1.10.2",
+    "summernote": "^0.8.16",
+    "summernote-nodejs": "^1.0.4"
   }
 }

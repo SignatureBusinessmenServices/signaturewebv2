@@ -1,0 +1,163 @@
+<div class="container my-5 py-5" style="min-height: 100vh;">
+  <div class="px-3">
+    <h3 class="feature-title"><strong>Business Settings</strong></h3>
+    <div class="">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/adminpage">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Business Settings</li>
+        </ol>
+      </nav>
+      <%- typeof msg != 'undefined' ? msg: '' %>
+    </div>
+
+  </div>
+
+
+<div class="container">
+  <form method="post" action="/settingsupdate">
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="w-100">
+            <div class="row px-4">
+            <div class="col-12">
+              <nav class="mt-3" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><strong>Business Details</strong></li>
+                </ol>
+              </nav>
+                <div class="form-group px-3 row">
+                  <label for="companyname" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Company Name:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="companyname" id="companyname" placeholder="Company Name" value='<%= settings.companyname %>'></input>
+                </div>
+                <div class="form-group px-3 row">
+                  <label for="email" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Email Address:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="email" id="email" placeholder="Email Address" value='<%= settings.email %>'></input>
+                </div>
+                <div class="form-group px-3 row">
+                  <label for="phone" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Phone Number:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="phone" id="phone" placeholder="Phone Number" value='<%= settings.phone %>'></input>
+                </div>
+                <hr class="my-4" style="background-color: #4285f4 ">
+                <nav class="mt-3" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><strong>Digital Info</strong></li>
+                  </ol>
+                </nav>
+                <div class="form-group px-3 row">
+                  <label for="facebook" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Facebook Link:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="facebook" id="facebook" placeholder="Facebook Link" value='<%= settings.facebook %>'></input>
+                </div>
+                <div class="form-group px-3 row">
+                  <label for="twitter" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Twitter Link:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="twitter" id="twitter" placeholder="Twitter Link" value='<%= settings.twitter %>'></input>
+                </div>
+                <div class="form-group px-3 row">
+                  <label for="youtube" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Youtube Link:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="youtube" id="youtube" placeholder="Youtube Link" value='<%= settings.youtube %>'></input>
+                </div>
+                <div class="form-group px-3 row">
+                  <label for="googlemap" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Embed Google Map Code:</label>
+                  <textarea type="text" class="form-control col-lg-9 col-md-12 form-control-sm" rows="4" name="googlemap" id="googlemap" placeholder="Embed Google Map Code" value=''><%= settings.googlemap %></textarea>
+                </div>
+                <hr class="my-4" style="background-color: #4285f4 ">
+
+
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+
+                <nav class="mt-3" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><strong>Address - English</strong></li>
+                  </ol>
+                </nav>
+                <div class="form-group px-3 row">
+                  <label for="building" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Building:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="building" id="building" placeholder="Building" value='<%= settings.building %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="floor" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Floor:</label>
+                  <input class="form-control col-lg-9 col-md-12 form-control-sm" id="floor" name="floor" placeholder="Floor" value='<%= settings.floor %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="street" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Street:</label>
+                  <input class="col-lg-9 col-md-12 form-control form-control-sm" name="street" id="street" placeholder="Street" value='<%= settings.street %>'></input>
+                </div>
+
+                  </div>
+
+                  <div class="col-lg-6 col-md-12">
+
+                <nav class="mt-3" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><strong>Address - Arabic</strong></li>
+                  </ol>
+                </nav>
+
+                <div class="form-group px-3 row">
+                  <label for="arbuilding" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Building:</label>
+                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="arbuilding" id="arbuilding" placeholder="Building" value='<%= settings.arbuilding %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="arfloor" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Floor:</label>
+                  <input class="form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="arfloor" name="arfloor" placeholder="Floor" value='<%= settings.arfloor %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="arstreet" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Street:</label>
+                  <input class="col-lg-9 col-md-12 form-control form-control-sm" dir="rtl" name="arstreet" id="arstreet" placeholder="Street" value='<%= settings.arstreet %>'></input>
+                </div>
+
+                </div>
+                  </div>
+
+                    <hr class="my-4" style="background-color: #4285f4 ">
+                  <div class="form-group">
+
+                    <nav class="mt-3" aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><strong>Promotional Scroll Bar</strong></li>
+                      </ol>
+                    </nav>
+
+                    <div class="form-group px-3 row">
+                      <label for="topbar" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Promo - English:</label>
+                      <textarea type="text" class="form-control col-lg-9 col-md-12 form-control-sm" rows="2" name="topbar" id="topbar" placeholder="Promo Bar Content" value=''><%= settings.topbar %></textarea>
+                    </div>
+
+                    <div class="form-group px-3 row">
+                      <label for="artopbar" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Promo - Arabic:</label>
+                      <textarea class="form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" rows="2" id="artopbar" name="artopbar" placeholder="Promo Bar Content" value=''><%= settings.artopbar %></textarea>
+                    </div>
+
+                    <div class="form-group px-3 row">
+                      <label for="topbaractive" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Status:</label>
+                      <select class="form-control col-lg-9 col-md-12 form-control-sm" id="topbaractive" name="topbaractive" placeholder="Promo Bar Content" value='<%= settings.topbaractive %>'>
+                        <option value="Active">Active</option>
+                          <option value="Disabled">Disabled</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+            </div>
+
+
+            </div>
+
+              <button class="btn btn-primary my-3 mx-4 float-right rounded">Update</button>
+            </div>
+            </div>
+            </div>
+
+        </div>
+
+      </form>
+
+      </div>
+
+    </div>

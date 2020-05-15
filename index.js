@@ -3,15 +3,41 @@ require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose')
 
+// Messages
+const flash = require('connect-flash');
+
+// Upload Images
+const multer = require('multer')
+// const GridFsStorage = require('multer-gridfs-storage')
+// const Grid = require('gridfs-stream')
+
+// Editable HTML Content
+const save = require('summernote-nodejs');
+
 const { SitemapStream, streamToPromise } = require('sitemap')
 const { createGzip } = require('zlib')
 
 const path = require('path')
 const bodyParser = require('body-parser')
+const ejs = require('ejs')
 const expressLayouts = require('express-ejs-layouts')
+
+// Passport
+const passport = require('passport')
+const session = require('express-session')
+const auth = require('./config/auth')(passport)
 
 const index = require('./routes/index')
 const contactSubmit = require('./routes/contactsubmit')
+const blogs = require('./routes/blogs')
+const admin = require('./routes/admin')
+const register = require('./routes/register')
+const adminpage = require('./routes/adminpage')
+const users = require('./routes/users')
+const testimonials = require('./routes/testimonials')
+const settings = require('./routes/settings')
+
+
 
 mongoose.connect('mongodb+srv://jerome:mongodbuser1234@emails-nkbzd.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }, (err, data) => {
@@ -24,6 +50,19 @@ mongoose.connect('mongodb+srv://jerome:mongodbuser1234@emails-nkbzd.mongodb.net/
     })
 
 const app = express();
+
+
+// Login / Session
+app.use(flash());
+
+app.use(session({
+    secret: 'awehfuilawef',
+    resave: true,
+    saveUninitialized: true
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 let sitemap
 
@@ -79,12 +118,18 @@ const https = require("https"),
   const options = {
     key: fs.readFileSync("/etc/letsencrypt/live/signature.ae/privkey.pem"),
     cert: fs.readFileSync("/etc/letsencrypt/live/signature.ae/fullchain.pem"),
-
-
   };
 
+
 app.use('/en',express.static(path.join(__dirname, 'public')))
+app.use('/en/bloglist',express.static(path.join(__dirname, 'public')))
+app.use('/bloglistedit',express.static(path.join(__dirname, 'public')))
+app.use('/blogupdate',express.static(path.join(__dirname, 'public')))
+app.use('/add',express.static(path.join(__dirname, 'public')))
 app.use('/ar',express.static(path.join(__dirname, 'public')))
+app.use('/',express.static(path.join(__dirname, 'public')))
+app.use('/edituser',express.static(path.join(__dirname, 'public')))
+app.use('/testimonialupdate',express.static(path.join(__dirname, 'public')))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressLayouts)
@@ -95,13 +140,21 @@ app.use((req, res, next) => {
 });
 
 
-app.set('views', [path.join(__dirname, 'views'),path.join(__dirname, 'views/arviews')])
+app.set('views', [path.join(__dirname, 'views'),path.join(__dirname, 'views/arviews'),path.join(__dirname, 'views/adminviews')])
 app.set('view engine', 'ejs')
-app.set('layout', 'layouten','layoutar')
+app.set('layout', 'layouten','layoutar','layoutadmin')
 
 
 app.use('/', index)
 app.use('/', contactSubmit)
+app.use('/', blogs)
+app.use('/', admin)
+app.use('/', register)
+app.use('/', adminpage)
+app.use('/', users)
+app.use('/', testimonials)
+app.use('/', settings)
+
 
 
 // Redirect from http port 80 to https
