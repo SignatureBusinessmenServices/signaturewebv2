@@ -83,7 +83,12 @@ router.get('/password-reset', (req, res, next) => {
 
       Settings.findOne((err,settings) => {
               //res.redirect('/assetlist')
-              res.render('reset', {layout: 'layoutadmin', settings: settings, user: req.user,})
+          UserSign.find((err,user) => {
+
+
+
+              res.render('reset', {layout: 'layoutadmin', settings: settings, user: user})
+              })
             })
           })
 
