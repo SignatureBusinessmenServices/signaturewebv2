@@ -116,8 +116,8 @@ const https = require("https"),
   fs = require("fs");
 
   const options = {
-    key: fs.readFileSync("/etc/letsencrypt/live/signature.ae/privkey.pem"),
-    cert: fs.readFileSync("/etc/letsencrypt/live/signature.ae/fullchain.pem"),
+    key: fs.readFileSync("/etc/letsencrypt/live/www.signature.ae/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/www.signature.ae/fullchain.pem"),
   };
 
 
