@@ -64,10 +64,9 @@
     <div id="top-row" class="w-100">
       <div class="row">
         <div class="text-white col-10 py-1 top-bar">
-          <a href="mailto:info@signature.ae" class="white-text"><bdo dir="ltr"><marquee behavior="scroll" direction="right"> اشترك لمدة 12 شهرًا وادفع مقابل 10 أشهر فقط!
-              &nbsp;&nbsp;<span style="text-decoration: underline; font-size: 13px; font-weight: lighter">
-              ارسل لنا عبر البريد الإلكتروني
-            </span></marquee><bdo></a>
+              <% if(settings.topbaractive == 'Active') { %>
+              <a href="mailto:<%= settings.email %>" class="white-text"><bdo dir="ltr"><marquee behavior="scroll" direction="right"><%= settings.artopbar %></marquee><bdo></a>
+              <% } %>
         </div>
         <div class="col-2 top-bar" >
             <a href="/en"><p class="float-left text-white py-1 pl-3">English</p></a>
@@ -173,7 +172,7 @@
               <p>
                 اتصل بنا
                 &nbsp;
-                <bdo dir="ltr"><a href="tel:+97143116500">+9714 311 6500</a><bdo>
+                <bdo dir="ltr"><a href="tel:<%= settings.phone %>"><%= settings.phone %></a><bdo>
               </p>
             </div>
 
@@ -254,15 +253,15 @@
                   <p class="mb-3 grey-text" dir="rtl">
                     سواء كنت صاحب شركة صغيرة أو متوسطة أو حتى كبيرة سنوفر لك جميع الحلول لتسهيل إدارة أعمالك.
                   </p>
-                  <p class="grey-text"><a href="tel:+97143116500" class="grey-text"><i class="fas fa-phone"></i>&nbsp;<bdo dir="ltr"> +9714 311 6500 </bdo></a></p>
-                  <p class="grey-text"><a href="mailto:info@signature.ae" class="grey-text"><i class="far fa-envelope"></i>&nbsp; info@signature.ae </a></p>
+                  <p class="grey-text"><a href="tel:<%= settings.phone %>" class="grey-text"><i class="fas fa-phone"></i>&nbsp;<bdo dir="ltr"> <%= settings.phone %> </bdo></a></p>
+                  <p class="grey-text"><a href="mailto:<%= settings.email %>" class="grey-text"><i class="far fa-envelope"></i>&nbsp; <%= settings.email %> </a></p>
                   <h6><strong>موقعنا</strong></h6>
-                  <p class="grey-text">برج السلام </br> الطابق 25 </br> شارع الشيخ زايد ، دبي </p>
+                  <p class="grey-text"><%= settings.arbuilding %></br> <%= settings.arfloor %> </br> <%= settings.arstreet %> </p>
                   <h6><strong>تابعنا</strong></h6>
                   <div id="sm-icons" class="pb-4">
-                    <a href="http://www.facebook.com/pages/Signature/364761476378" target="_blank"><i class="fab fa-facebook-f p-2"></i></a>
-                    <a href="http://www.twitter.com/SignatureDXB" target="_blank"><i class="fab fa-twitter p-2"></i><a/>
-                    <a href="http://www.youtube.com/watch?v=SPpW0PV85YQ" target="_blank"><i class="fab fa-youtube p-2"></i></a>
+                    <a href="<%= settings.facebook %>" target="_blank"><i class="fab fa-facebook-f p-2"></i></a>
+                    <a href="<%= settings.twitter %>" target="_blank"><i class="fab fa-twitter p-2"></i><a/>
+                    <a href="<%= settings.youtube %>" target="_blank"><i class="fab fa-youtube p-2"></i></a>
                   </div>
 
                 </div>
@@ -280,8 +279,8 @@
 
                   <div class="col-12 text-right">
                   <h6 class="mb-3"><strong>زيارتنا في دبي</strong></h6>
-                  <!-- <iframe class="align-center" src="https://goo.gl/maps/YSi7qkaubPV5xg9S9" width="90%" height="300" frameborder="1" style="border:0; border-radius: 5px;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe> -->
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.2150269360727!2d55.28868852012306!3d25.229681583959948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42ef4bcbda43%3A0x996608a1fcf77669!2zQnVyaiBBbCBTYWxhbSAtIDZ0aCBTdCAtINiv2KjZig!5e0!3m2!1sar!2sae!4v1587901018280!5m2!1sar!2sae" width="90%" height="300" frameborder="1" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.2150269360727!2d55.28868852012306!3d25.229681583959948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42ef4bcbda43%3A0x996608a1fcf77669!2zQnVyaiBBbCBTYWxhbSAtIDZ0aCBTdCAtINiv2KjZig!5e0!3m2!1sar!2sae!4v1587901018280!5m2!1sar!2sae" width="90%" height="300" frameborder="1" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe> -->
+                    <%- settings.googlemap %>
                 </div>
               </div>
                 <!--/First row-->

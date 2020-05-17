@@ -1,13 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- <meta name="keywords" content="HTML, Web Applicaations, Online Software, CSS, Javascript, Website, Website Developer, Hosting, UAE Website, Website Support, Website Services, Online"> -->
-  <meta name="description" content="Signature Dubai Business Set-up and Serviced Offices - our 10 years of experience can help your business grow.">
-  <title>Signature Serviced Offices & Business Set-Up Dubai</title>
+  <meta name="description" content="فلسفتنا بسيطة في الإمضاء لخدمات الأعمال - معيارنا هو تقديم خدمة استثنائية">
+  <title>من نحن</title>
   <link rel="icon" href="img/favicon.ico" type="image/ico">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
@@ -53,14 +53,6 @@
           }
   </style>
 
-  <!-- SummerNote -->
-
-  <link href="css/summernote-bs4.min.css" rel="stylesheet">
-  <link href="css/font/summernote.ttf" rel="stylesheet">
-
-  <!-- DataTables -->
-  <!-- MDBootstrap Datatables  -->
-  <link href="css/addons/datatables2.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -71,23 +63,22 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
     <div id="top-row" class="w-100">
       <div class="row">
-
         <div class="text-white col-10 py-1 top-bar">
-          <% if(settings.topbaractive == 'Active') { %>
-          <a href="mailto:<%= settings.email %>" class="white-text"><marquee behavior="scroll" direction="left"><%= settings.topbar %></marquee></a>
-          <% } %>
+          <a href="mailto:info@signature.ae" class="white-text"><bdo dir="ltr"><marquee behavior="scroll" direction="right"> اشترك لمدة 12 شهرًا وادفع مقابل 10 أشهر فقط!
+              &nbsp;&nbsp;<span style="text-decoration: underline; font-size: 13px; font-weight: lighter">
+              ارسل لنا عبر البريد الإلكتروني
+            </span></marquee><bdo></a>
         </div>
-
         <div class="col-2 top-bar" >
-            <a href="/ar"><p class="float-right text-white bg-blue pr-3 py-1">العربية</p></a>
+            <a href="/en"><p class="float-left text-white py-1 pl-3">English</p></a>
         </div>
 
     </div>
-    <div class="container px-4 col-12">
+    <div class="container pr-4 pl-0 col-12">
 
 
       <!-- Brand -->
-      <a class="navbar-brand" href="/en" target="">
+      <a class="navbar-brand" href="/ar" target="">
         <img src="img/logo.png"></img>
       </a>
 
@@ -102,30 +93,27 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <!-- Left -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link font-weight-bold" href="/en" >Home
+            <a class="nav-link font-weight-bold" href="/ar" >الصفحة الرئيسية
               <span class="sr-only"></span>
             </a>
           </li>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link font-weight-bold" href="/en/offices" target="">Serviced Offices</a>
+            <a class="nav-link font-weight-bold" href="/ar/offices" target="">مكاتب مجهزة للعمل</a>
           </li>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link font-weight-bold" href="/en/setup" target="" >Business Setup</a>
+              <a class="nav-link font-weight-bold" href="/ar/setup" target="" >تأسيس الشركات</a>
           </li>
           <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link font-weight-bold" href="/en/cms" target="" >CMS</a>
-          </li>
-          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link font-weight-bold" href="/en/blog" target="" >Blog</a>
+            <a class="nav-link font-weight-bold" href="/ar/cms" target="" >خدمات إدارة الاتصالات</a>
           </li>
           <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-            <a class="nav-link dropbtn font-weight-bold" href="" target="" >Questions?</a>
-            <div class="dropdown-content font-weight-bold">
-            <a href="/en/about">About Us</a>
-            <a href="/en/testimonials">Testimonials</a>
-            <a href="/en/faqs">FAQ's</a>
+            <a class="nav-link dropbtn font-weight-bold" href="" target="" >لمزيد من المعلومات</a>
+            <div class="dropdown-content text-right pl-1 font-weight-bold">
+                <a href="/ar/about">من نحن</a>
+                <a href="/ar/testimonials">عملاؤنا</a>
+                <a href="/ar/faqs">الأسئلة الشائعة</a>
             </div>
           </li>
         </ul>
@@ -144,39 +132,49 @@
    <div class="modal-dialog modal-dialog-centered" role="document">
      <div class="modal-content">
        <div class="modal-header">
-         <h4 class="modal-title" id="exampleModalCenterTitle"><strong>Leave a Message</strong></h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <span id="close-btn" class="white-text" aria-hidden="true">&times;</span>
          </button>
+         <h4 class="modal-title" id="exampleModalCenterTitle"><strong>
+           اترك رسالة
+         </strong></h4>
+
+
        </div>
-        <div class="modal-body">
+        <div class="modal-body text-right">
           <!-- Form -->
-          <form name="" method="post" action="/en/contactsubmit">
-            <div class="md-form">
+          <form name="" method="post" action="/ar/contactsubmit">
+            <div class="md-form mt-4">
               <i class="fas fa-user prefix grey-text"></i>
-              <input type="text" id="form1" class="form-control" name="name" required>
-              <label for="form1">Your name</label>
+              <input type="text" id="form3" class="form-control py-2 px-3 mr-4" name="name" placeholder="اسمك" required>
+              <!-- <label for="form3">Your name</label> -->
             </div>
             <div class="md-form">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="form2" class="form-control" name="email" required>
-              <label for="form2">Your email</label>
-            </div>
-            <div class="md-form">
-              <i class="fas fa-phone prefix grey-text"></i>
-              <input type="text" id="form3" class="form-control" name="phoneNumber" required>
-              <label for="form3">Phone number</label>
-            </div>
-            <div class="md-form">
-              <i class="fas fa-pencil-alt prefix grey-text"></i>
-              <textarea type="text" id="form8" class="md-textarea" name="message" required></textarea>
-              <label for="form8">Your message</label>
+              <input type="email" id="form2" class="form-control py-2 px-3 mr-4" name="email" placeholder="بريدك الالكتروني" required>
+              <!-- <label for="form2">Your email</label> -->
             </div>
 
+            <div class="md-form">
+              <i class="fas fa-phone prefix grey-text"></i>
+              <input type="text" id="form2" class="form-control py-2 px-3 mr-4" name="phoneNumber"placeholder="رقم الهاتف" required>
+              <!-- <label for="form2">Your email</label> -->
+            </div>
+
+            <div class="md-form mb-0">
+              <i class="fas fa-pencil-alt prefix grey-text"></i>
+              <textarea type="text" id="form8" class="md-textarea py-2 px-3 mr-4" name="message" placeholder="رسالة" required></textarea>
+              <!-- <label for="form8">Your message</label> -->
+            </div>
+          </br>
             <div class="text-center">
-              <button class="btn" type="submit" value="submit">Send</button>
+              <button class="btn btn-sm btn-blue" type="submit" value="submit">إرسال</button>
               <hr>
-              <p>Call Us&nbsp; <a href="tel:<%= settings.phone %>"><%= settings.phone %></a></p>
+              <p>
+                اتصل بنا
+                &nbsp;
+                <bdo dir="ltr"><a href="tel:+97143116500">+9714 311 6500</a><bdo>
+              </p>
             </div>
 
           </form>
@@ -187,7 +185,9 @@
 </div>
 <!-- Modal -Other -->
 
+
   <%- body %>
+
 
   <!--Footer-->
   <footer class="page-footer text-center font-small wow fadeIn">
@@ -243,22 +243,26 @@
           <div class="row wow fadeIn m-0">
 
             <!--Grid column-->
-            <div class="col-lg-4 col-sm-12 px-4 pl-5">
+            <div class="col-lg-4 col-sm-12 px-4 pr-5">
                 <hr class="my-4">
               <!--First row-->
               <div class="row">
-                <div class="col-12 text-left">
-                  <h6 class="mb-3"><strong>Get In Touch</strong></h6>
-                  <p class="mb-3 grey-text">Large, medium or small, we have solutions for all types of businesses.</p>
-                  <p><a href="tel:+9714 311 6500" class="grey-text"><i class="fas fa-phone"></i>&nbsp; +971 4 311 6500 </a></p>
-                  <p><a href="mailto:<%= settings.email %>" class="grey-text"><i class="far fa-envelope"></i>&nbsp; <%= settings.email %></a> </p>
-                  <h6><strong>Visit Us</strong></h6>
-                  <p class="grey-text"><%= settings.building %> </br> <%= settings.floor %> </br> <%= settings.street %> </p>
-                  <h6><strong>Connect With Us</strong></h6>
+                <div class="col-12 text-right">
+                  <h6 class="mb-3"><strong>
+                    تواصل معنا
+                  </strong></h6>
+                  <p class="mb-3 grey-text" dir="rtl">
+                    سواء كنت صاحب شركة صغيرة أو متوسطة أو حتى كبيرة سنوفر لك جميع الحلول لتسهيل إدارة أعمالك.
+                  </p>
+                  <p class="grey-text"><a href="tel:+97143116500" class="grey-text"><i class="fas fa-phone"></i>&nbsp;<bdo dir="ltr"> +9714 311 6500 </bdo></a></p>
+                  <p class="grey-text"><a href="mailto:info@signature.ae" class="grey-text"><i class="far fa-envelope"></i>&nbsp; info@signature.ae </a></p>
+                  <h6><strong>موقعنا</strong></h6>
+                  <p class="grey-text">برج السلام </br> الطابق 25 </br> شارع الشيخ زايد ، دبي </p>
+                  <h6><strong>تابعنا</strong></h6>
                   <div id="sm-icons" class="pb-4">
-                    <a href="<%= settings.facebook %>" target="_blank"><i class="fab fa-facebook-f p-2"></i></a>
-                    <a href="<%= settings.twitter %>" target="_blank"><i class="fab fa-twitter p-2"></i><a/>
-                    <a href="<%= settings.youtube %>" target="_blank"><i class="fab fa-youtube p-2"></i></a>
+                    <a href="http://www.facebook.com/pages/Signature/364761476378" target="_blank"><i class="fab fa-facebook-f p-2"></i></a>
+                    <a href="http://www.twitter.com/SignatureDXB" target="_blank"><i class="fab fa-twitter p-2"></i><a/>
+                    <a href="http://www.youtube.com/watch?v=SPpW0PV85YQ" target="_blank"><i class="fab fa-youtube p-2"></i></a>
                   </div>
 
                 </div>
@@ -269,54 +273,55 @@
             <!--/Grid column-->
 
             <!--Grid column-->
-              <div class="col-lg-4 col-sm-12 pl-5">
+              <div class="col-lg-4 col-sm-12 pr-5">
                   <hr class="my-4">
                 <!--First row-->
                 <div class="row">
 
-                  <div class="col-12 text-left">
-                    <h6 class="mb-3"><strong>Visit Us In Dubai</strong></h6>
-                    <%- settings.googlemap %>
-                    </div>
+                  <div class="col-12 text-right">
+                  <h6 class="mb-3"><strong>زيارتنا في دبي</strong></h6>
+                  <!-- <iframe class="align-center" src="https://goo.gl/maps/YSi7qkaubPV5xg9S9" width="90%" height="300" frameborder="1" style="border:0; border-radius: 5px;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe> -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.2150269360727!2d55.28868852012306!3d25.229681583959948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42ef4bcbda43%3A0x996608a1fcf77669!2zQnVyaiBBbCBTYWxhbSAtIDZ0aCBTdCAtINiv2KjZig!5e0!3m2!1sar!2sae!4v1587901018280!5m2!1sar!2sae" width="90%" height="300" frameborder="1" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
                 </div>
+              </div>
                 <!--/First row-->
               </div>
               <!--/Grid column-->
 
               <!--Grid column-->
-                <div id="contact-footer" class="col-lg-4 col-sm-12 pl-5">
+              <div class="col-lg-4 col-sm-12 pr-5">
                       <hr class="my-4">
                   <!--First row-->
                   <div class="row">
-                    <div class="col-12 text-left">
-                      <h6 class="mb-3"><strong>Contact Us</strong></h6>
-                      <form id="contact-form" class="bg-white p-3 rounded mb-5" name="" method="post" action="/en/contactSubmit">
+                    <div class="col-12 text-right">
+                      <h6 class="mb-3"><strong>  اتصل بنا </strong></h6>
+                      <form id="contact-form" class="bg-white p-3 rounded mb-5" name="" method="post" action="/ar/contactsubmit">
 
                         <div class="md-form mt-1">
                           <i class="fas fa-user prefix grey-text"></i>
-                          <input type="text" id="form3" class="form-control pt-0" name="name" placeholder="Your Name" required>
+                          <input type="text" id="form3" class="form-control pt-0 mr-4" name="name" placeholder="اسمك" required>
                           <!-- <label for="form3">Your name</label> -->
                         </div>
                         <div class="md-form">
                           <i class="fas fa-envelope prefix grey-text"></i>
-                          <input type="email" id="form2" class="form-control pt-0" name="email" placeholder="Your Email" required>
+                          <input type="email" id="form2" class="form-control pt-0 mr-4" name="email" placeholder="بريدك الالكتروني" required>
                           <!-- <label for="form2">Your email</label> -->
                         </div>
 
                         <div class="md-form">
                           <i class="fas fa-phone prefix grey-text"></i>
-                          <input type="text" id="form2" class="form-control pt-0" name="phoneNumber" placeholder="Your Phone Number" required>
+                          <input type="text" id="form2" class="form-control pt-0 mr-4" name="phoneNumber" placeholder="رقم الهاتف" required>
                           <!-- <label for="form2">Your email</label> -->
                         </div>
 
                         <div class="md-form mb-0">
                           <i class="fas fa-pencil-alt prefix grey-text"></i>
-                          <textarea type="text" id="form8" class="md-textarea pt-0" name="message" placeholder="Message" required></textarea>
+                          <textarea type="text" id="form8" class="md-textarea pt-0 mr-4" name="message" placeholder="رسالة" required></textarea>
                           <!-- <label for="form8">Your message</label> -->
                         </div>
 
                         <div class="text-center">
-                          <button class="btn btn-sm btn-blue" type="submit" value="submit">Send</button>
+                          <button class="btn btn-sm btn-blue" type="submit" value="submit">إرسال</button>
                           <hr>
 
                         </div>
@@ -334,10 +339,12 @@
     <!-- Section 2 -->
 
 
+
+
     <!--Copyright-->
    <div class="footer-copyright py-3">
-     <p>Copyright&nbsp;&copy;
-     <script>document.write(new Date().getFullYear());</script>&nbsp;&nbsp; Signature Businessmen Services
+     <p>حقوق الطبع والنشر محفوظ&nbsp;&copy;
+     <script>document.write(new Date().getFullYear());</script>&nbsp;&nbsp; الإمضاء لخدمات الأعمال
      <a href="/" target=""> </a></p>
    </div>
    <!--/.Copyright-->
@@ -345,9 +352,8 @@
  </footer>
 <!--/.Footer-->
 
-
     <!-- Floating Action Button -->
-    <div id="fabmenu">
+    <bdo dir="ltr"><div id="fabmenu">
     <a href="#" class="float" id="menu-share">
     <i class="fa fa-comment my-float"></i>
     </a>
@@ -361,12 +367,12 @@
     <!-- <li><a href="#">
     <i class="fa fa-twitter my-float"></i>
     </a></li> -->
-    </ul>
-    </div>
+  </ul>
+    </div></bdo>
     <!-- Floating Action Button -->
 
-<!--
-    <script type="text/javascript">
+
+    <!-- <script type="text/javascript">
         $(document).ready(function () {
             $('a[href^="#"]').on('click', function (e) {
                 e.preventDefault();
@@ -419,45 +425,6 @@
         });
       </script> -->
       <!-- Modal On Load Once Per Day-->
-
-
-      <!-- SummerNote -->
-      <!-- <script type="text/javascript" src="js/summernote-bs4.min.js"></script>
-      <script>
-      $(document).ready(function() {
-        $('#summernote').summernote({
-       placeholder: '',
-       tabsize: 2,
-       height: 500,
-       // toolbar: [
-       //   ['style', ['style']],
-       //   ['font', ['bold', 'underline', 'clear']],
-       //   ['color', ['color']],
-       //   ['para', ['ul', 'ol', 'paragraph']],
-       //   ['table', ['table']],
-       //   ['insert', ['link', 'picture', 'video']],
-       //   ['view', ['fullscreen', 'codeview', 'help']]
-       // ]
-     });
-      });
-      </script>
-      <script>
-      $('.editor').summernote('code');
-      </script> -->
-
-      <!-- MDBootstrap Datatables  -->
-      <script type="text/javascript" src="js/addons/datatables2.min.js"></script>
-      <script>
-        $(document).ready(function () {
-      //Pagination numbers
-      $('#paginationNumbers').DataTable({
-        "pagingType": "numbers"
-      });
-      });
-      </script>
-
-
-
 
 
 </body>
