@@ -18,7 +18,7 @@
 
 <div class="col-12 mb-3">
   <% testimonials.forEach(function( eachTestimonial) { %>
-  <form method="post" action="/edittestimonial/<%= eachTestimonial._id %>" enctype="multipart/form-data">
+  <form method="post" action="/edittestimonial/<%= eachTestimonial._id %>" enctype="multipart/form-data" id="mainform">
   <div class="row">
     <div class="col-12">
 
@@ -33,7 +33,7 @@
                   <span class="input-group-text" id="inputGroupFileAddon01" style="background-color: #4285f4; color: white; font-weight: lighter ">Update Company Logo:</span>
                 </div>
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                  <input type="file" class="custom-file-input" id="logo"
                     aria-describedby="inputGroupFileAddon01" name="testimonialImage">
                   <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                 </div>
@@ -46,18 +46,18 @@
               </nav>
 
                 <div class="form-group px-3 row">
-                  <label for="title" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Company Name:</label>
-                  <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="company" id="title" placeholder="Company Name" value='<%= eachTestimonial.company %>'></input>
+                  <label for="company" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Company Name:</label>
+                  <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" name="company" id="company" placeholder="Company Name" value='<%= eachTestimonial.company %>'></input>
                 </div>
 
                 <div class="form-group px-3 row">
-                  <label for="headline" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Comment By:</label>
-                  <input class="form-control col-lg-9 col-md-12 form-control-sm" id="headline" name="person" placeholder="Comment by" value='<%- eachTestimonial.person %>'></input>
+                  <label for="person" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Comment By:</label>
+                  <input class="input form-control col-lg-9 col-md-12 form-control-sm" id="person" name="person" placeholder="Comment by" value='<%- eachTestimonial.person %>'></input>
                 </div>
 
                 <div class="form-group px-3 row">
-                  <label for="details" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Testimonial:</label>
-                  <textarea class="col-lg-9 col-md-12 form-control form-control-sm" rows="6" name="testimonial" id="details" placeholder=" " value=''><%- eachTestimonial.testimonial %></textarea>
+                  <label for="testimonial" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Testimonial:</label>
+                  <textarea class="input col-lg-9 col-md-12 form-control form-control-sm" rows="6" name="testimonial" id="testimonial" placeholder=" " value=''><%- eachTestimonial.testimonial %></textarea>
                 </div>
 
                 <hr class="my-4" style="background-color: #4285f4 ">
@@ -69,18 +69,18 @@
                 </nav>
 
                   <div class="form-group px-3 row">
-                    <label for="title" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Company Name:</label>
-                    <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="arcompany" id="title" placeholder="Company Name" value='<%= eachTestimonial.arcompany %>'></input>
+                    <label for="arcompany" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Company Name:</label>
+                    <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="arcompany" id="arcompany" placeholder="Company Name" value='<%= eachTestimonial.arcompany %>'></input>
                   </div>
 
                   <div class="form-group px-3 row">
-                    <label for="headline" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Comment By:</label>
-                    <input class="form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="headline" name="arperson" placeholder="Comment by" value='<%- eachTestimonial.arperson %>'></input>
+                    <label for="arperson" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Comment By:</label>
+                    <input class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="arperson" name="arperson" placeholder="Comment by" value='<%- eachTestimonial.arperson %>'></input>
                   </div>
 
                   <div class="form-group px-3 row">
-                    <label for="details" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Testimonial:</label>
-                    <textarea class="col-lg-9 col-md-12 form-control form-control-sm" dir="rtl" rows="6" name="artestimonial" id="details" placeholder=" " value=''><%- eachTestimonial.artestimonial %></textarea>
+                    <label for="artestimonial" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Testimonial:</label>
+                    <textarea class="input col-lg-9 col-md-12 form-control form-control-sm" dir="rtl" rows="6" name="artestimonial" id="artestimonial" placeholder=" " value=''><%- eachTestimonial.artestimonial %></textarea>
                   </div>
 
             </div>
@@ -99,7 +99,19 @@
 
     </div>
 
-          <div class="container col-lg-6 col-md-12 pl-1">
+    <div class="container col-lg-6 col-md-12 pl-1">
+    <nav>
+      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-english-tab" data-toggle="tab" href="#nav-english" role="tab" aria-controls="nav-english" aria-selected="true">English</a>
+        <a class="nav-item nav-link" id="nav-arabic-tab" data-toggle="tab" href="#nav-arabic" role="tab" aria-controls="nav-arabic" aria-selected="false">Arabic</a>
+
+      </div>
+    </nav>.
+
+    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab">
+
+
             <div class="col-12 mb-2">
               <% testimonials.forEach(function( eachTestimonial) { %>
               <div class="row">
@@ -119,12 +131,12 @@
                           <div class="p-4 p-md-5 text-black">
                             <div class="row px-0 bg-white">
                               <div class="col-lg-6 col-md-12 pt-3 text-center">
-                                <img class="img-fluid" src=<%= eachTestimonial.testimonialImage %>>
+                                <img class="img-fluid" id="preview-logo" src=<%= eachTestimonial.testimonialImage %>>
                               </div>
                               <div class="col-lg-6 col-md-12 pt-3">
-                                <h3><%= eachTestimonial.company %></h3>
-                                <p class="font-italic"><%- eachTestimonial.testimonial %></p>
-                                <p class="grey-text"><%= eachTestimonial.person %></p>
+                                <h3><span class="company"><%= eachTestimonial.company %></span></h3>
+                                <p class="font-italic"><span class="testimonial"><%- eachTestimonial.testimonial %></span></p>
+                                <p class="grey-text"><span class="person"><%= eachTestimonial.person %></span></p>
                                </div>
 
                             </div>
@@ -135,10 +147,10 @@
                     </div>
                   </div>
                     <% }) %>
+                  </div>
                 </div>
 
-
-
+                	<div class="tab-pane fade show" id="nav-arabic" role="tabpanel" aria-labelledby="nav-arabic-tab">
                   <div class="col-12">
                     <% testimonials.forEach(function( eachTestimonial) { %>
                     <div class="row">
@@ -158,12 +170,12 @@
                                 <div class="p-4 p-md-5 text-black">
                                   <div class="row px-0 bg-white">
                                     <div class="col-lg-6 col-md-12 pt-3 text-center">
-                                      <img class="img-fluid" src=<%= eachTestimonial.testimonialImage %>>
+                                      <img class="img-fluid" id="arpreview-logo" src=<%= eachTestimonial.testimonialImage %>>
                                     </div>
                                     <div class="text-right col-lg-6 col-md-12 pt-3">
-                                      <h3><%= eachTestimonial.arcompany %></h3>
-                                      <p class="font-italic"><%- eachTestimonial.artestimonial %></p>
-                                      <p class="grey-text"><%= eachTestimonial.arperson %></p>
+                                      <h3><span class="arcompany"><%= eachTestimonial.arcompany %></span></h3>
+                                      <p class="font-italic"><span class="artestimonial"><%- eachTestimonial.artestimonial %></span></p>
+                                      <p class="grey-text"><span class="arperson"><%= eachTestimonial.arperson %></span></p>
                                      </div>
 
                                   </div>
@@ -175,6 +187,7 @@
                         </div>
                           <% }) %>
                       </div>
+                    </div>
                     </div>
     </div>
 

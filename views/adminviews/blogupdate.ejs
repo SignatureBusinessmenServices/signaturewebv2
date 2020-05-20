@@ -8,7 +8,7 @@
 
 <div class="col-12 mb-3">
   <% blogs.forEach(function( eachBlog) { %>
-  <form method="post" action="/editblog/<%= eachBlog._id %>" enctype="multipart/form-data">
+  <form method="post" action="/editblog/<%= eachBlog._id %>" enctype="multipart/form-data" id="mainform">
   <div class="row">
     <div class="col-12">
 
@@ -36,27 +36,27 @@
 
 
                       <label class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0" for="imageinput">Update Image: </label>
-                      <input class="bg-light form-control col-lg-9 col-md-12 form-control-sm py-0" type="file" id="imageinput" name="blogImage" value=""/>
+                      <input class="input bg-light form-control col-lg-9 col-md-12 form-control-sm py-0" type="file" id="imageinput" name="blogImage" value=""/>
                   </div>
 
                   <div class="form-group row">
                     <label for="title" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title:</label>
-                    <input type="text" class="form-control col-lg-9 col-md-12 form-control-sm" name="title" id="title" placeholder="Title" value='<%= eachBlog.title %>'></input>
+                    <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" name="title" id="title" placeholder="Title" value='<%= eachBlog.title %>'></input>
                   </div>
 
                   <div class="form-group row">
                     <label for="date" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Date:</label>
-                    <input class="form-control col-lg-9 col-md-12 form-control-sm" type="text" id="date" name="date" placeholder="Date" value='<%= eachBlog.date %>'></input>
+                    <input class="input form-control col-lg-9 col-md-12 form-control-sm" type="text" id="date" name="date" placeholder="Date" value='<%= eachBlog.date %>'></input>
                   </div>
 
                   <div class="form-group row">
                     <label for="headline" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Headline:</label>
-                    <textarea class="form-control col-lg-9 col-md-12 form-control-sm" id="headline" rows="5" name="headline" placeholder="Headline" value=''><%- eachBlog.headline %></textarea>
+                    <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" id="headline" rows="5" name="headline" placeholder="Headline" value=''><%- eachBlog.headline %></textarea>
                   </div>
 
                   <div class="form-group row">
                     <label for="details" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Enter the rest of the information here:</label>
-                    <textarea id="summernote" class="summernote col-lg-9 col-md-12 form-control form-control-sm" name="details" id="details" placeholder=" " value=''><%- eachBlog.details %></textarea>
+                    <textarea class="summernote col-lg-9 col-md-12 form-control form-control-sm" name="details" id="details" placeholder=" " value=''><%- eachBlog.details %></textarea>
                   </div>
 
               </div>
@@ -93,16 +93,15 @@
                     <div class="row">
 
                     <div class="col-lg-6 col-md-12 text-center">
-                      <img class="img-fluid p-3" src=<%= eachBlog.blogImage %>>
+                      <img class="img-fluid p-3" id="preview-imageinput" src=<%= eachBlog.blogImage %>>
                     </div>
                     <div class="col-lg-6 col-md-12 p-3">
                       <div class="p-3">
-                      <h1><%= eachBlog.title %></h1>
-                      <p class="blue-text"><%= eachBlog.date %></p>
-                      <p class="pr-3"> <%= eachBlog.headline %></p>
+                      <h1><span class="title"><%= eachBlog.title %></span></h1>
+                      <p class="blue-text"><span class="date"><%= eachBlog.date %></span></p>
+                      <p class="pr-3"> <span class="headline"><%= eachBlog.headline %></span></p>
                       <div id="<%= eachBlog.collapseId %>" class="collapse" data-parent="#accordion">
-                      <div> <%- eachBlog.details %>
-                      </div>
+                      <div> <span class="details"><%- eachBlog.details %></span> </div>
                       </div>
                       <a href="<%= eachBlog.collapseHref %>" data-toggle="collapse" class="collapsed"></a>
                     </div>

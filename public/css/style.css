@@ -203,8 +203,64 @@ body,
 
 @media (max-width: 740px) {
   .full-page-intro {
-    height: 1000px; }    }
+    height: 1000px; }
 
+/* #formfronttext {
+  padding-top: 180px;
+} */
+
+#formfronttext h1 {
+  font-size: 1em;
+}
+
+#formfronttext h5 {
+  font-size: .40em;
+}
+
+#formfronttext a {
+  font-size: .30em;
+  padding: 5px;
+}
+
+.top-left {
+  font-size: .40em;
+}
+
+.formfrontimage {
+
+  max-height: 200px;
+
+}
+
+  }
+
+  .formfrontimage {
+    object-fit: cover;
+    height: 400px;
+    width: 100%;
+    filter: brightness(65%) saturate(140%);
+  }
+
+  .carouselcontainer {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: white
+  }
 
 
 /* Full Page Carousel itself*/
@@ -230,17 +286,41 @@ body,
 
 
 
+/* #homepageform .carousel {
+  height: 400px;
+} */
+
+
 /* Adjustment for mobile devices*/
 @media (max-width: 776px) {
   .carousel {
-    height: 50%; }
+    height: 35%; }
+
+  .view {
+    max-height: 100%;
+    min-width: 100%;
+    margin-top: 50px;
+    object-fit: cover;
+    object-position: center center;
+  }
 
     #front-content {
       width: 80%;
-      margin-top: 40px;
-      padding-bottom: 200px;
+      margin-top: 200px;
     }
 
+    #front-content h1 {
+      font-size: 1.5em;
+    }
+
+    #front-content h5 {
+      font-size: .80em;
+    }
+
+    #front-content a {
+      font-size: .60em;
+      padding: 5px;
+    }
 
      }
 
@@ -261,7 +341,6 @@ body,
   .mask {
     padding-bottom: 200px;
   }
-
 
    }
 
@@ -295,11 +374,23 @@ body,
           left: 0;
       }
 
-      /* #front-content {
-        width: 90%;
-        margin-top: 40px;
-        padding-bottom: 0;
-      } */
+
+      #formfronttext h1 {
+        font-size: 1.3em;
+      }
+
+      #formfronttext h5 {
+        font-size: .60em;
+      }
+
+      #formfronttext a {
+        font-size: .60em;
+        padding: 5px;
+      }
+
+      .top-left {
+        font-size: .40em;
+      }
 
   }
 
@@ -416,3 +507,12 @@ body,
 }
 
   /* FAB */
+
+.imageinput {
+  font-size: 12px;
+}
+
+#serviceform {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}

@@ -4,6 +4,7 @@ const router = express.Router()
 const blog = require('../models/blogs')
 const Testimonial = require('../models/testimonials')
 const Settings = require('../models/settings')
+const Home = require('../models/homepage')
 
 router.get('/', (req, res, next) => {
 
@@ -13,8 +14,12 @@ router.get('/', (req, res, next) => {
 router.get('/en', (req, res, next) => {
 
     Settings.findOne((err,settings) => {
-      res.render('index', {layout: 'layouten', settings: settings})
+
+          Home.findOne((err,home) => {
+
+      res.render('index', {layout: 'layouten', settings: settings, home: home})
     })
+  })
 })
 
 router.get('/en/offices', (req, res, next) => {

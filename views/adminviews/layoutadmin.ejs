@@ -269,6 +269,7 @@
        new WOW().init();
      </script> -->
 
+
      <!-- Modal on Load -->
      <!-- <script type="text/javascript">
      $(window).on('load',function(){
@@ -291,12 +292,29 @@
       </script> -->
       <!-- Modal On Load Once Per Day-->
 
+      <!-- Live Form Update -->
+
+      <script>
+        $('.input').keyup(function(){
+           var $this = $(this);
+           $('.'+$this.attr('id')+'').html($this.val());
+        });
+      </script>
+
 
       <!-- SummerNote -->
       <script type="text/javascript" src="js/summernote-bs4.min.js"></script>
+
       <script>
       $(document).ready(function() {
         $('.summernote').summernote({
+          callbacks: {
+            onKeyup: function(e) {
+              setTimeout(function(){
+                $(".details").html($('.summernote').val());
+              },200);
+            }
+          },
        placeholder: '',
        tabsize: 2,
        height: 200,
@@ -310,9 +328,10 @@
          // ['insert', ['link', 'picture', 'video']],
          // ['view', ['fullscreen', 'codeview', 'help']]
        ]
-     });
+      });
       });
       </script>
+
       <script>
       $('.editor').summernote('code');
       </script>
@@ -327,6 +346,31 @@
         });
       });
       </script>
+
+
+      <script>
+      function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imgId = '#preview-'+$(input).attr('id');
+                    arimgId = '#arpreview-'+$(input).attr('id');
+                    $(imgId).attr('src', e.target.result);
+                    $(arimgId).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+          }
+
+
+          $("#mainform input[type='file']").change(function(){
+            readURL(this);
+          });
+        </script>
+
+
 
 
 </body>

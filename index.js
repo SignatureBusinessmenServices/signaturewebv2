@@ -36,6 +36,7 @@ const adminpage = require('./routes/adminpage')
 const users = require('./routes/users')
 const testimonials = require('./routes/testimonials')
 const settings = require('./routes/settings')
+const pagesadmin = require('./routes/pagesadmin')
 
 
 
@@ -154,6 +155,7 @@ app.use('/', adminpage)
 app.use('/', users)
 app.use('/', testimonials)
 app.use('/', settings)
+app.use('/', pagesadmin)
 
 
 

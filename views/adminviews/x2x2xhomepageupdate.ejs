@@ -1,0 +1,434 @@
+<div class="container my-5 py-5" style="min-height: 100vh;">
+  <div class="px-3">
+    <h3 class="feature-title"><strong>Edit Home Page</strong></h3>
+    <div class="">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/adminpage">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit Home Page</li>
+        </ol>
+      </nav>
+      <%- typeof msg != 'undefined' ? msg: '' %>
+    </div>
+
+  </div>
+
+  <div class="container" id="homepageform">
+  <form method="post" action="/edithomepage" enctype="multipart/form-data" id="mainform">
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="w-100">
+            <div class="row px-4">
+            <div class="col-12">
+              <nav class="mt-3" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><strong>Carousel Images</strong></li>
+                </ol>
+              </nav>
+
+              <nav>
+      					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+      						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Engish</a>
+      						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-arabic" role="tab" aria-controls="nav-profile" aria-selected="false">Arabic</a>
+      					</div>
+      				</nav>
+
+              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                  <div class="carouselcontainer">
+                  <img src="uploads/imageOne.jpg" alt="Snow" style="width:100%;">
+                  <div class="centered">Centered</div>
+                  </div>
+                </div>
+
+                <!-- ARABIC -->
+
+                <div class="tab-pane fade show" id="nav-arabic" role="tabpanel" aria-labelledby="nav-arabic-tab">
+
+                </div>
+                </div>
+
+                <div class="imageinput input-group mt-2 rounded">
+                <div class=" input-group-prepend">
+                  <span class="imageinput input-group-text" id="inputGroupFileAddon01" style="background-color: #4285f4; color: white; font-weight: lighter ">Image One:</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="imageOne"
+                    aria-describedby="inputGroupFileAddon01" name="imageOne">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file - 1MB maximum</label>
+                </div>
+              </div>
+
+
+              <div class="imageinput input-group mt-2 rounded">
+                <div class="input-group-prepend">
+                  <span class="imageinput input-group-text" id="inputGroupFileAddon02" style="background-color: #4285f4; color: white; font-weight: lighter ">Image Two:</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="imageTwo"
+                    aria-describedby="inputGroupFileAddon02" name="imageTwo">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file - 1MB maximum</label>
+                </div>
+              </div>
+
+              <div class="imageinput input-group mt-2 mb-3 rounded">
+                <div class="input-group-prepend">
+                  <span class="imageinput input-group-text" id="inputGroupFileAddon03" style="background-color: #4285f4; color: white; font-weight: lighter ">Image Three:</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="imageThree"
+                    aria-describedby="inputGroupFileAddon03" name="imageThree">
+                  <label class="custom-file-label" for="inputGroupFile03">Choose file - 1MB maximum</label>
+                </div>
+              </div>
+                <!-- <hr class="my-4" style="background-color: #4285f4 "> -->
+
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><strong>Text Over Images - English</strong></li>
+                  </ol>
+                </nav>
+                <div class="form-group px-3 row">
+                  <label for="overlaytitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Heading:</label>
+                  <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" rows="5" name="overlaytitle" id="overlaytitle" value='<%= home.overlaytitle %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="overlaysubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Subtitle:</label>
+                  <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" id="overlaysubtitle" rows="5" name="overlaysubtitle" value=''><%= home.overlaysubtitle %></textarea>
+                </div>
+
+                  </div>
+
+                  <div class="col-lg-6 col-md-12">
+
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><strong>Text Over Images - Arabic</strong></li>
+                  </ol>
+                </nav>
+
+                <div class="form-group px-3 row">
+                  <label for="aroverlaytitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Heading:</label>
+                  <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="aroverlaytitle" id="aroverlaytitle" value='<%= home.aroverlaytitle %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="aroverlaysubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Subtitle:</label>
+                  <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="aroverlaysubtitle" rows="5" name="aroverlaysubtitle" value=''><%= home.aroverlaysubtitle %></textarea>
+                </div>
+                </div>
+                </div>
+
+                <hr class="my-4" style="background-color: #4285f4 ">
+
+                <div class="row">
+                <div class="col-12">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><strong>Serviced Office</strong></li>
+                    </ol>
+                  </nav>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                <div class="imageinput input-group my-3 px-3 rounded">
+                  <div class="input-group-prepend">
+                    <span class="imageinput input-group-text" id="inputGroupFileAddon04" style="background-color: #4285f4; color: white; font-weight: lighter ">Update Image</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="serviceimage"
+                      aria-describedby="inputGroupFileAddon04" name="imageServiced">
+                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                  </div>
+                </div>
+
+
+              <div class="col-12">
+              <div class="form-group px-3 row">
+                <label for="servicetitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title - English:</label>
+                <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" name="servicetitle" id="servicetitle" value='<%= home.servicetitle %>'></input>
+              </div>
+
+              <div class="form-group px-3 row">
+                <label for="servicesubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Description:</label>
+                <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" id="servicesubtitle" rows="5" name="servicesubtitle" value=''><%= home.servicesubtitle %></textarea>
+              </div>
+              </div>
+
+              <div class="col-12">
+
+
+              <div class="form-group px-3 row">
+                <label for="arservicetitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title - Arabic:</label>
+                <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="arservicetitle" id="arservicetitle" value='<%= home.arservicetitle %>'></input>
+              </div>
+
+              <div class="form-group px-3 row">
+                <label for="arservicesubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Description:</label>
+                <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="arservicesubtitle" rows="5" name="arservicesubtitle" value=''><%= home.arservicesubtitle %></textarea>
+              </div>
+              </div>
+            </div>
+
+              <div class="container col-lg-6 col-md-12">
+                  <div id="serviceform" class=" mt-3 p-0">
+                  <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-enservice-tab" data-toggle="tab" href="#nav-enservice" role="tab" aria-controls="nav-enservice" aria-selected="true">English</a>
+                      <a class="nav-item nav-link" id="nav-arservice-tab" data-toggle="tab" href="#nav-arservice" role="tab" aria-controls="nav-arservice" aria-selected="false">Arabic</a>
+
+                    </div>
+                  </nav>
+
+                  <div class="tab-content py-3 px-3 mx-5 px-sm-0" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-enservice" role="tabpanel" aria-labelledby="nav-enservice-tab">
+
+                            <div class="text-center">
+                              <h5 class="mb-3 feature-title"><strong class="servicetitle"> <%= home.servicetitle %> </strong></h5>
+                              <img class="mb-3" id="preview-serviceimage" src="uploads/imageServiced.jpg" style="border-radius: 50%; height: 250px; width: 250px;"></img>
+                              <p class="mb-3 grey-text servicesubtitle"> <%= home.servicesubtitle %> </p>
+                              <a target="" class="btn btn-blue btn-md rounded">Read More</a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="tab-pane fade show" id="nav-arservice" role="tabpanel" aria-labelledby="nav-arservice-tab">
+
+                            <div class="text-center">
+                              <h5 class="mb-3 feature-title"><strong class="arservicetitle">
+                            <%= home.arservicetitle %>
+                              </strong></h5>
+                              <img class="mb-3" id="arpreview-serviceimage" src="uploads/imageServiced.jpg" style="border-radius: 50%; height: 250px; width: 250px;"></img>
+                              <p class="mb-3 grey-text arservicesubtitle">
+                                <%= home.arservicesubtitle %>
+                              </p>
+
+                              <a target="" class="btn btn-blue btn-md rounded px-3" style="font-size:16px;">
+                             اقرأ المزيد
+                                </a>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                  <hr class="my-4" style="background-color: #4285f4 ">
+
+                  <div class="row">
+                  <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><strong>Business Setup</strong></li>
+                      </ol>
+                    </nav>
+                  </div>
+
+                  <div class="col-lg-6 col-md-12">
+                  <div class="imageinput input-group my-3 px-3 rounded">
+                    <div class="input-group-prepend">
+                      <span class="imageinput input-group-text" id="inputGroupFileAddon04" style="background-color: #4285f4; color: white; font-weight: lighter ">Update Image</span>
+                    </div>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="setupimage"
+                        aria-describedby="inputGroupFileAddon05" name="imageSetup">
+                      <label class="custom-file-label" for="inputGroupFile05">Choose file</label>
+                    </div>
+                  </div>
+
+
+                <div class="col-12">
+                <div class="form-group px-3 row">
+                  <label for="setuptitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title - English:</label>
+                  <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" name="setuptitle" id="setuptitle" value='<%= home.setuptitle %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="setupsubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Description:</label>
+                  <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" id="setupsubtitle" rows="5" name="setupsubtitle" value=''><%= home.setupsubtitle %></textarea>
+                </div>
+                </div>
+
+                <div class="col-12">
+
+
+                <div class="form-group px-3 row">
+                  <label for="arsetuptitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title - Arabic:</label>
+                  <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="arsetuptitle" id="arsetuptitle" value='<%= home.arsetuptitle %>'></input>
+                </div>
+
+                <div class="form-group px-3 row">
+                  <label for="arsetupsubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Description:</label>
+                  <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="arsetupsubtitle" rows="5" name="arsetupsubtitle" value=''><%= home.arsetupsubtitle %></textarea>
+                </div>
+                </div>
+              </div>
+
+                <div class="container col-lg-6 col-md-12">
+                    <div id="serviceform" class=" mt-3 p-0">
+                    <nav>
+                      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-ensetup-tab" data-toggle="tab" href="#nav-ensetup" role="tab" aria-controls="nav-ensetup" aria-selected="true">English</a>
+                        <a class="nav-item nav-link" id="nav-arsetup-tab" data-toggle="tab" href="#nav-arsetup" role="tab" aria-controls="nav-arsetup" aria-selected="false">Arabic</a>
+
+                      </div>
+                    </nav>
+
+                    <div class="tab-content py-3 px-3 mx-5 px-sm-0" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="nav-ensetup" role="tabpanel" aria-labelledby="nav-ensetup-tab">
+
+                              <div class="text-center">
+                                <h5 class="mb-3 feature-title"><strong class="setuptitle"> <%= home.setuptitle %> </strong></h5>
+                                <img class="mb-3" id="preview-setupimage" src="uploads/imageSetup.jpg" style="border-radius: 50%; height: 250px; width: 250px;"></img>
+                                <p class="mb-3 grey-text setupsubtitle"> <%= home.setupsubtitle %> </p>
+                                <a target="" class="btn btn-blue btn-md rounded">Read More</a>
+                              </div>
+
+
+                          </div>
+
+                          <div class="tab-pane fade show" id="nav-arsetup" role="tabpanel" aria-labelledby="nav-arsetup-tab">
+
+                              <div class="text-center">
+                                <h5 class="mb-3 feature-title"><strong class="arsetuptitle">
+                              <%= home.arsetuptitle %>
+                                </strong></h5>
+                                <img class="mb-3" id="arpreview-setupimage" src="uploads/imageSetup.jpg" style="border-radius: 50%; height: 250px; width: 250px;"></img>
+                                <p class="mb-3 grey-text arsetupsubtitle">
+                                  <%= home.arsetupsubtitle %>
+                                </p>
+
+                                <a target="" class="btn btn-blue btn-md rounded px-3" style="font-size:16px;">
+                               اقرأ المزيد
+                                  </a>
+                              </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <hr class="my-4" style="background-color: #4285f4 ">
+
+                    <div class="row">
+                    <div class="col-12">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><strong>CMS</strong></li>
+                        </ol>
+                      </nav>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                    <div class="imageinput input-group my-3 px-3 rounded">
+                      <div class="input-group-prepend">
+                        <span class="imageinput input-group-text" id="inputGroupFileAddon06" style="background-color: #4285f4; color: white; font-weight: lighter ">Update Image</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="CMSimage"
+                          aria-describedby="inputGroupFileAddon06" name="imageCMS">
+                        <label class="custom-file-label" for="inputGroupFile05">Choose file</label>
+                      </div>
+                    </div>
+
+
+                  <div class="col-12">
+                  <div class="form-group px-3 row">
+                    <label for="cmstitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title - English:</label>
+                    <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" name="cmstitle" id="cmstitle" value='<%= home.cmstitle %>'></input>
+                  </div>
+
+                  <div class="form-group px-3 row">
+                    <label for="cmssubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Description:</label>
+                    <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" id="cmssubtitle" rows="5" name="cmssubtitle" value=''><%= home.cmssubtitle %></textarea>
+                  </div>
+                  </div>
+
+                  <div class="col-12">
+
+
+                  <div class="form-group px-3 row">
+                    <label for="arcmstitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Title - Arabic:</label>
+                    <input type="text" class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" name="arcmstitle" id="arcmstitle" value='<%= home.arcmstitle %>'></input>
+                  </div>
+
+                  <div class="form-group px-3 row">
+                    <label for="arcmssubtitle" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Description:</label>
+                    <textarea class="input form-control col-lg-9 col-md-12 form-control-sm" dir="rtl" id="arcmssubtitle" rows="5" name="arcmssubtitle" value=''><%= home.arcmssubtitle %></textarea>
+                  </div>
+                  </div>
+                </div>
+
+                  <div class="container col-lg-6 col-md-12">
+                      <div id="serviceform" class=" mt-3 p-0">
+                      <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                          <a class="nav-item nav-link active" id="nav-encms-tab" data-toggle="tab" href="#nav-encms" role="tab" aria-controls="nav-encms" aria-selected="true">English</a>
+                          <a class="nav-item nav-link" id="nav-arcms-tab" data-toggle="tab" href="#nav-arcms" role="tab" aria-controls="nav-arcms" aria-selected="false">Arabic</a>
+
+                        </div>
+                      </nav>
+
+                      <div class="tab-content py-3 px-3 mx-5 px-sm-0" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-encms" role="tabpanel" aria-labelledby="nav-encms-tab">
+
+                                <div class="text-center">
+                                  <h5 class="mb-3 feature-title"><strong class="cmstitle"> <%= home.cmstitle %> </strong></h5>
+                                  <img class="mb-3" id="preview-CMSimage" src="uploads/imageCMS.jpg" style="border-radius: 50%; height: 250px; width: 250px;"></img>
+                                  <p class="mb-3 grey-text cmssubtitle"> <%= home.cmssubtitle %> </p>
+                                  <a target="" class="btn btn-blue btn-md rounded">Read More</a>
+                                </div>
+
+
+                            </div>
+
+                            <div class="tab-pane fade show" id="nav-arcms" role="tabpanel" aria-labelledby="nav-arcms-tab">
+
+                                <div class="text-center">
+                                  <h5 class="mb-3 feature-title"><strong class="arcmstitle">
+                                <%= home.arcmstitle %>
+                                  </strong></h5>
+                                  <img class="mb-3" id="arpreview-CMSimage" src="uploads/imageCMS.jpg" style="border-radius: 50%; height: 250px; width: 250px;"></img>
+                                  <p class="mb-3 grey-text arcmssubtitle">
+                                    <%= home.arcmssubtitle %>
+                                  </p>
+
+                                  <a target="" class="btn btn-blue btn-md rounded px-3" style="font-size:16px;">
+                                 اقرأ المزيد
+                                    </a>
+                                </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                      <hr class="my-4" style="background-color: #4285f4 ">
+
+            </div>
+
+
+            </div>
+
+              <button class="btn btn-primary my-3 mx-4 float-right rounded">Update</button>
+              <a class="btn btn-primary my-3 mx-4 float-right rounded" data-toggle="modal" data-target="#preview">Preview</a>
+            </div>
+            </div>
+            </div>
+        </div>
+      </form>
+
+      </div>
+
+    </div>
