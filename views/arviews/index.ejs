@@ -37,16 +37,16 @@
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div class="view" style="background-image: url('img/alsalamnight.jpg'); background-repeat: no-repeat; background-size: cover;">
+          <img class="view" src='uploads/imageOne.jpg'>
 
           <!-- Mask & flexbox options-->
-          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          <!-- <div class="mask rgba-black-light d-flex justify-content-center align-items-center"> -->
 
             <!-- Content -->
             <div id="front-content" class="text-center white-text wow fadeIn">
               <h1 class="mb-lg-4 mb-md-0">
                 <strong>
-              مكتب الخدمات المتاحة
+                  <%= home.aroverlaytitle %>
                 </strong>
               </h1>
 
@@ -55,7 +55,7 @@
               </p> -->
 
               <h5 class="mb-3">
-                تقع مكاتبنا في قلب مدينة دبي بمبنى مكاتب فندق الفيرمونت وذلك لمساعدتك على التنقل بسهولة لتسريع ازدهار أعمالك
+                <%= home.aroverlaysubtitle %>
               </h5>
 
               <a class="btn btn-outline-white btn-md rounded" data-toggle="modal" data-target="#message">
@@ -66,25 +66,25 @@
             </div>
             <!-- Content -->
 
-          </div>
+          <!-- </div> -->
           <!-- Mask & flexbox options-->
 
-        </div>
+        <!-- </div> -->
       </div>
       <!--/First slide-->
 
       <!--Second slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('img/alsalamday.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <  <img class="view" src='uploads/imageTwo.jpg'>
 
           <!-- Mask & flexbox options-->
-          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          <!-- <div class="mask rgba-black-light d-flex justify-content-center align-items-center"> -->
 
             <!-- Content -->
             <div id="front-content" class="text-center white-text wow fadeIn">
               <h1 class="mb-lg-4 mb-md-0">
                 <strong>
-                مكتب الخدمات المتاحة
+                  <%= home.aroverlaytitle %>
                 </strong>
               </h1>
 
@@ -93,7 +93,7 @@
               </p> -->
 
               <h5 class="mb-3">
-                تقع مكاتبنا في قلب مدينة دبي بمبنى مكاتب فندق الفيرمونت وذلك لمساعدتك على التنقل بسهولة لتسريع ازدهار أعمالك
+                <%= home.aroverlaysubtitle %>
               </h5>
 
               <a class="btn btn-outline-white btn-md rounded" data-toggle="modal" data-target="#message">
@@ -104,25 +104,25 @@
             </div>
             <!-- Content -->
 
-          </div>
+          <!-- </div> -->
           <!-- Mask & flexbox options-->
 
-        </div>
+        <!-- </div> -->
       </div>
       <!--/Second slide-->
 
       <!--Third slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('img/szrnight.jpg'); background-repeat: no-repeat; background-size: cover; ">
+          <img class="view" src='uploads/imageThree.jpg'>
 
           <!-- Mask & flexbox options-->
-          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+          <!-- <div class="mask rgba-black-light d-flex justify-content-center align-items-center"> -->
 
             <!-- Content -->
             <div id="front-content" class="text-center white-text wow fadeIn">
               <h1 class="mb-lg-4 mb-md-0">
                 <strong>
-                  مكتب الخدمات المتاحة
+                  <%= home.aroverlaytitle %>
                 </strong>
               </h1>
 
@@ -131,7 +131,7 @@
               </p> -->
 
               <h5 class="mb-3">
-                تقع مكاتبنا في قلب مدينة دبي بمبنى مكاتب فندق الفيرمونت وذلك لمساعدتك على التنقل بسهولة لتسريع ازدهار أعمالك
+                <%= home.aroverlaysubtitle %>
               </h5>
 
               <a class="btn btn-outline-white btn-md rounded" data-toggle="modal" data-target="#message">
@@ -142,10 +142,10 @@
             </div>
             <!-- Content -->
 
-          </div>
+          <!-- </div> -->
           <!-- Mask & flexbox options-->
 
-        </div>
+        <!-- </div> -->
       </div>
       <!--/Third slide-->
 
@@ -186,13 +186,12 @@
           <div class="row">
             <div class="col-12 text-center">
               <h5 class="mb-3 feature-title"><strong>
-              خدمات إدارة الاتصالات
+            <%= home.arcmstitle %>
               </strong></h5>
-              <img class="mb-3" src="img/cms_1.png" style="border-radius: 50%; height: 300px; width: 300px;"></img>
+              <img class="mb-3" src="img/cms_1.png"></img>
               <p class="mb-3 grey-text">
 
-          نقدم أيضا خدمات إدارة طرق التواصل المختلفة لمساعدتك على تلبية جميع احتياجات شركتك براحة بال.
-
+                <%= home.arcmssubtitle %>
               </p>
 
               <a target="" href="/ar/cms" class="mb-5 btn btn-blue btn-md rounded px-3" style="font-size:16px;">
@@ -213,11 +212,11 @@
               <div class="col-12 text-center">
                 <h5 class="mb-3 feature-title">
                 <strong>
-                    تأسيس الشركات
-                </strong></h5>
-                <img class="mb-3" src="img/business_setup.png" style="border-radius: 50%; height: 300px; width: 300px;"></img>
+                    <%= home.arsetuptitle %>
+              </strong></h5>
+                <img class="mb-3" src="img/business_setup.png"></img>
                 <p class="mb-3 grey-text">
-                    واء كنت شركة حديثة أو تتطلع إلى التغيير أو تبحث عن إعادة هيكلة دعنا نساعدك في معرفة الطريق الصحيح لتأسيس أو لازدهار شركتك في دبي
+                  <%= home.arsetupsubtitle %>
                 </p>
                 <a target="" href="/ar/setup" class="mb-3 btn btn-blue btn-md rounded px-3" style="font-size:16px;">
                 اقرأ المزيد
@@ -234,10 +233,13 @@
               <!--First row-->
               <div class="row">
                 <div class="col-12 text-center">
-                  <h5 class="mb-3 feature-title"><strong>مكاتب مجهزة للعمل</strong></h5>
-                  <img class="mb-3" src="img/serviced_offices.png" style="border-radius: 50%; height: 300px; width: 300px;"></img>
+                  <h5 class="mb-3 feature-title">
+                  <strong>
+                    <%= home.arservicetitle %>
+                  </strong></h5>
+                  <img class="mb-3" src="img/serviced_offices.png"></img>
                   <p class="mb-3 grey-text">
-                      تقع مكاتبنا في قلب مدينة دبي بمبنى مكاتب فندق الفيرمونت وذلك لمساعدتك على التنقل بسهولة لتسريع ازدهار أعمالك
+                    <%= home.arservicesubtitle %>
                   </p>
 
                   <a target="" href="/ar/offices" class="mb-5 btn btn-blue btn-md rounded px-3" style="font-size:16px;">اقرأ المزيد</a>

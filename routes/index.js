@@ -118,8 +118,11 @@ router.get('/ar', (req, res, next) => {
 
       Settings.findOne((err,settings) => {
 
-    res.render('arviews/index', {layout: 'layoutar', settings: settings})
+          Home.findOne((err,home) => {
+
+    res.render('arviews/index', {layout: 'layoutar', home: home, settings: settings})
   })
+})
 })
 
 router.get('/ar/offices', (req, res, next) => {

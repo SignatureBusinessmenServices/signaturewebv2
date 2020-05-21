@@ -84,15 +84,6 @@ body,
   .dropdown:hover .dropbtn {background-color: #0060af;}
 
 
-  /* .view {
-  line-height: 1;
-  display: block;
-  max-width: 100%;
-  height: auto;
-  } */
-
-
-
   #message .modal-header {
     background-color: #0060af;
     color: white;
@@ -280,34 +271,61 @@ body,
 }
 
 #front-content {
-  width: 50%;
-  margin-top: 40px;
+  position: absolute;
+  width: 40%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.view {
+    filter: brightness(65%) saturate(140%);
+    object-fit: cover;
+    margin-top: 80px;
+    width: 100%;
+    height: 100%
+}
+
+.view2 {
+
+    object-fit: cover;
+    margin-top: 80px;
+    width: 100%;
+    height: 100%
+}
 
 
 /* #homepageform .carousel {
   height: 400px;
 } */
 
+#about img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+
 
 /* Adjustment for mobile devices*/
 @media (max-width: 776px) {
   .carousel {
-    height: 35%; }
+    height: 50%; }
 
   .view {
     max-height: 100%;
     min-width: 100%;
     margin-top: 50px;
-    object-fit: cover;
-    object-position: center center;
   }
 
-    #front-content {
-      width: 80%;
-      margin-top: 200px;
-    }
+  .view2 {
+    max-height: 100%;
+    min-width: 100%;
+    margin-top: 50px;
+  }
+
+  #front-content {
+    width: 80%;
+  }
 
     #front-content h1 {
       font-size: 1.5em;
@@ -374,6 +392,9 @@ body,
           left: 0;
       }
 
+      #front-content {
+        width: 80%;
+      }
 
       #formfronttext h1 {
         font-size: 1.3em;
