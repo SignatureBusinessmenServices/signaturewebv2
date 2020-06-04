@@ -1,4 +1,6 @@
 <div class="my-5 py-5" style="min-height: 100vh;">
+    <% blogs.forEach(function( eachBlog) { %>
+  <form method="post" action="/editblog/<%= eachBlog._id %>" enctype="multipart/form-data" id="mainform">
 <div class="container">
 
   <div class="text-left p-3">
@@ -7,8 +9,8 @@
       </div>
 
 <div class="col-12 mb-3">
-  <% blogs.forEach(function( eachBlog) { %>
-  <form method="post" action="/editblog/<%= eachBlog._id %>" enctype="multipart/form-data" id="mainform">
+
+
   <div class="row">
     <div class="col-12">
 
@@ -56,7 +58,9 @@
 
                   <div class="form-group row">
                     <label for="details" class="col-lg-3 col-md-12 col-form-label col-form-label-sm" style="padding-left: 0">Enter the rest of the information here:</label>
-                    <textarea class="summernote col-lg-9 col-md-12 form-control form-control-sm" name="details" id="details" placeholder=" " value=''><%- eachBlog.details %></textarea>
+                  <div class="card blogeditarea col-lg-9 col-md-12">
+                    <textarea class="summernote form-control form-control-sm" name="details" id="details" placeholder=" " value='' ><%- eachBlog.details %></textarea>
+                  </div>
                   </div>
 
               </div>
@@ -64,15 +68,14 @@
 
             </div>
 
-            <button class="btn btn-primary my-3 float-right rounded mr-5">Update</button>
-            <a href="/adminpage" class="btn btn-danger my-3 mx-1 float-right rounded">Cancel</a>
+
             </div>
             </div>
             </div>
 
         </div>
 
-      </form>
+
         <% }) %>
       </div>
 
@@ -115,6 +118,9 @@
               </div>
                 <% }) %>
             </div>
+            <hr class="mt-4 mb-2 mx-3" style="background-color: #4285f4 ">
+            <button class="btn btn-primary my-3 float-right rounded mr-3">Update</button>
+            <a href="/adminpage" class="btn btn-danger my-3 mx-1 float-right rounded">Cancel</a>            
     </div>
-
+    </form>
     </div>

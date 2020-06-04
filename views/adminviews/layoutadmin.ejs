@@ -110,7 +110,7 @@
           </li> -->
 
 
-          <% if (user.isSuperAdmin) { %>
+          <% if (user.isSuperAdmin == "Yes") { %>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link font-weight-bold" href="/users" target="" >Users</a>
             </li>
@@ -305,6 +305,9 @@
       <!-- SummerNote -->
       <script type="text/javascript" src="js/summernote-bs4.min.js"></script>
 
+      <!-- Image Click -->
+      <script type="text/javascript" src="js/imageclick.js"></script>
+
       <script>
       $(document).ready(function() {
         $('.summernote').summernote({
@@ -317,8 +320,8 @@
           },
        placeholder: '',
        tabsize: 2,
-       height: 200,
-       width: 745,
+       // height: 200,
+       // width: 720,
        toolbar: [
          ['style', ['style']],
          ['font', ['bold', 'underline', 'clear']],
@@ -331,6 +334,28 @@
       });
       });
       </script>
+
+      <script>
+      $(document).ready(function() {
+        $('.summernote2').summernote({
+       placeholder: '',
+        // tabsize: 2,
+       // height: 200,
+       // width: 745,
+       toolbar: [
+         // ['style', ['style']],
+         // ['font', ['bold', 'underline', 'clear']],
+         // ['color', ['color']],
+         // ['para', ['ul', 'ol', 'paragraph']],
+         // ['table', ['table']],
+         // ['insert', ['link', 'picture', 'video']],
+         // ['view', ['fullscreen', 'codeview', 'help']]
+       ]
+      });
+      });
+      </script>
+
+
 
       <script>
       $('.editor').summernote('code');
@@ -370,8 +395,37 @@
           });
         </script>
 
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.delete-blog').on('click', function(e){
+              $target = $(e.target)
+              const id = $target.attr('data-id')
+              $.ajax({
+                type: 'DELETE',
+                url: '/blog/'+id,
+                success: function(response){
 
+                }
+              })
+            })
+          })
+        </script>
 
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.delete-testimonial').on('click', function(e){
+              $target = $(e.target)
+              const id = $target.attr('data-id')
+              $.ajax({
+                type: 'DELETE',
+                url: '/testimonial/'+id,
+                success: function(response){
+
+                }
+              })
+            })
+          })
+        </script>
 
 </body>
 

@@ -20,7 +20,7 @@ router.get('/settingsupdate', (req, res, next) => {
       return
   }
 
-  if (user.isSuperAdmin == false) {
+  if (user.isSuperAdmin == "No") {
       // res.redirect('/adminpage')
       User.find((err, users) => {
       res.render('adminhomepage', {layout: 'layoutadmin', users: users, user: req.user, msg: '<h5 class="text-left btn-warning rounded py-2 pl-4 my-2 mr-1">Error: You do not have access to this page!</h5>'})
@@ -49,7 +49,7 @@ router.post('/settingsupdate', (req, res, next) => {
       return
   }
 
-  if (user.isSuperAdmin == false) {
+  if (user.isSuperAdmin == "No") {
       res.redirect('/adminpage')
       return
   } else {

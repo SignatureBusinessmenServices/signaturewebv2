@@ -37,6 +37,11 @@ const users = require('./routes/users')
 const testimonials = require('./routes/testimonials')
 const settings = require('./routes/settings')
 const pagesadmin = require('./routes/pagesadmin')
+const servicepage = require('./routes/servicepage')
+const setuppage = require('./routes/setuppage')
+const cmspage = require('./routes/cmspage')
+const aboutpage = require('./routes/aboutpage')
+const faqspage = require('./routes/faqspage')
 
 
 
@@ -156,6 +161,11 @@ app.use('/', users)
 app.use('/', testimonials)
 app.use('/', settings)
 app.use('/', pagesadmin)
+app.use('/', servicepage)
+app.use('/', setuppage)
+app.use('/', cmspage)
+app.use('/', aboutpage)
+app.use('/', faqspage)
 
 
 

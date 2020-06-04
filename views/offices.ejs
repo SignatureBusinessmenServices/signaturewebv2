@@ -76,23 +76,14 @@
           <!--First row-->
           <div class="row">
             <div class="col-12 text-left">
-              <h3 class="mb-3 feature-title"><strong>Serviced Offices</strong></h3>
-              <p class="mb-3 grey-text">Signature’s professional and well-appointed Serviced Offices are located at the prestigious Burj Al Salam, on Sheikh Zayed Road in the business heart of Dubai. Located near Burj Al Salam is the World Trade Centre metro station, and of course the Dubai World Trade Centre exhibition halls.</p>
-              <h5 class="mb-3 feature-title"><strong>Location</strong></h5>
-              <img class="mb-3 img-fluid" src="img/location_article.png" style="width: 90%"></img>
-              <p class="mb-3 grey-text">Close to the Dubai International Financial Center and Emirates Towers, our serviced offices located at the Burj Al Salam will help you do business, easily. With a range of hotels, restaurants and leisure facilities close by, your clients will be impressed by your new address.</p>
-              <h5 class="mb-3 feature-title"><strong>Offices</strong></h5>
-              <img class="mb-3 img-fluid" src="img/offices_article1.png" style="width: 90%"></img>
-              <p class="mb-3 grey-text">
-                Signature offices offer a highly professional business environment with 5-star facilities. </br></br>
-
-                Our serviced offices are spread with a range of views and sizes designed to make your working day easier and more efficient. All are furnished to the highest corporate standards with finishes befitting our multinational corporate clientele. </br></br>
-
-                The just move-in simplicity of Signature's serviced offices offer considerable advantages over traditional leased offices for small and medium sized companies, allowing for reduced up-front costs - all serviced offices come with a fully-inclusive price allowing you to get on with the business of running your business. </br></br>
-
-                In addition, all office units are Dubai Economic Department (DED) compliant. </br></br>
-
-                Check out the gallery of our different serviced office spaces below, and contact us today to arrange a viewing.</br></br></p>
+              <h3 class="mb-3 feature-title"><strong> <%= services.servicetitle %> </strong></h3>
+              <p class="mb-3 grey-text"> <%- services.servicedescription %> </p>
+              <h5 class="mb-3 feature-title"><strong> <%= services.locationtitle %> </strong></h5>
+              <img class="mb-3 img-fluid" src="uploads/locationimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%"></img>
+              <p class="mb-3 grey-text"> <%- services.locationdescription %> </p>
+              <h5 class="mb-3 feature-title"><strong> <%= services.officetitle %> </strong></h5>
+              <img class="mb-3 img-fluid" src="uploads/officeimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%"></img>
+              <p class="mb-3 grey-text">  <%- services.officedescription %> </p>
             </div>
           </div>
           <!--/First row-->
@@ -110,7 +101,7 @@
               <div class="col-12 text-center justify-content-center">
                 <a href="" data-toggle="modal" data-target="#message">  <h5 class="mb-3 feature-title black-text"><strong>Contact Us</strong></h5>
                 <i class="mb-3 fas fa-phone sd-bar-icons"></i> <a/>
-                <p class="mb-3 grey-text">Contact us today to find out how Signature can help your business in Dubai.</p>
+                <p class="mb-3 grey-text"> <%- sidebars.contact %> </p>
                 <a data-toggle="modal" data-target="#message" class="mb-3 btn btn-blue btn-sm rounded p-2">Contact Us</a>
               </div>
             </div>
@@ -122,7 +113,7 @@
                 <hr class="my-3">
                 <a href="/en/setup"> <h5 class="mb-3 feature-title black-text"><strong>Business Set-up?</strong></h5>
                 <i class="mb-3 fas fa-handshake sd-bar-icons"></i> </a>
-                <p class="mb-3 grey-text">With over 17 years experience in the Dubai market, Signature has the know-how to get your business started in Dubai.</p>
+                <p class="mb-3 grey-text"> <%- sidebars.setup %> </p>
                 <a target="" href="/en/setup" class="mb-3 btn btn-blue btn-sm rounded p-2">Find Out More</a>
               </div>
             </div>
@@ -145,9 +136,9 @@
     <div>
       <a target="" href="" data-toggle="modal" data-target="#message"><h5 class="mb-4 black-text"><strong>Contact Us Today</strong></h5></a>
     </div>
-      <div class="row col-12">
+      <div class="row col-12 text-center">
         <div class="col-md-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image1"><img src="img/serviced2.jpg" alt="placeholder" class="img-fluid"></a>
+          <a href="" target="" data-toggle="modal" data-target="#image1"><img src="uploads/gallery1.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -158,7 +149,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced2.jpg" alt="placeholder" class="img-fluid">
+                   <img src="uploads/gallery1.jpg" alt="placeholder" class="img-fluid">
               </div>
             </div>
           </div>
@@ -166,7 +157,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image2"><img src="img/serviced4.jpg" alt="placeholder" class="img-fluid"></a>
+          <a href="" target="" data-toggle="modal" data-target="#image2"><img src="uploads/gallery2.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -177,7 +168,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced4.jpg" class="img-fluid">
+                   <img src="uploads/gallery2.jpg" class="img-fluid">
               </div>
             </div>
           </div>
@@ -185,7 +176,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image3"><img src="img/serviced5.jpg" alt="placeholder" class="img-fluid"></a>
+          <a href="" target="" data-toggle="modal" data-target="#image3"><img src="uploads/gallery3.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -196,7 +187,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced5.jpg" class="img-fluid">
+                   <img src="uploads/gallery3.jpg" class="img-fluid">
               </div>
             </div>
           </div>
@@ -205,9 +196,9 @@
 
       </div>
 
-      <div class="row col-12">
-        <div class="col-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image4"><img src="img/serviced6.jpg" alt="placeholder" class="img-fluid"></a>
+      <div class="row col-12 text-center">
+        <div class="col-md-4 mb-3">
+          <a href="" target="" data-toggle="modal" data-target="#image4"><img src="uploads/gallery4.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -218,15 +209,15 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced6.jpg" alt="placeholder" class="img-fluid">
+                   <img src="uploads/gallery4.jpg" alt="placeholder" class="img-fluid">
               </div>
             </div>
           </div>
         </div>
         </div>
 
-        <div class="col-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image5"><img src="img/serviced3.jpg" alt="placeholder" class="img-fluid"></a>
+        <div class="col-md-4 mb-3">
+          <a href="" target="" data-toggle="modal" data-target="#image5"><img src="uploads/gallery5.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -237,15 +228,15 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced3.jpg" class="img-fluid">
+                   <img src="uploads/gallery5.jpg" class="img-fluid">
               </div>
             </div>
           </div>
         </div>
         </div>
 
-        <div class="col-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image6"><img src="img/serviced6.jpg" alt="placeholder" class="img-fluid"></a>
+        <div class="col-md-4 mb-3">
+          <a href="" target="" data-toggle="modal" data-target="#image6"><img src="uploads/gallery6.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -256,7 +247,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced6.jpg" class="img-fluid">
+                   <img src="uploads/gallery6.jpg" class="img-fluid">
               </div>
             </div>
           </div>

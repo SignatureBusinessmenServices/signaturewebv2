@@ -45,10 +45,13 @@
           <td><strong><%= eachTestimonial.company %></strong></td>
           <td><%= eachTestimonial.person %></td>
           <td><%= eachTestimonial.timestamp %></td>
-          <td>
-            <div class="row text-center">
+          <td style="width: 20%;">
 
-            <a class="btn btn-primary btn-sm" href="/testimonialupdate/<%= eachTestimonial._id %>">Edit</a>
+            <div class="text-center">
+            <a class="btn btn-primary btn-xs m-1" href="/testimonialupdate/<%= eachTestimonial._id %>" style="width: 70px;">Edit</a>
+            <% if (user.isSuperAdmin == "Yes") { %>
+            <a class="btn btn-danger btn-xs delete-testimonial m-1" style="width: 70px;" href="" data-id="<%= eachTestimonial._id %>">Delete</a>
+            <% } %>
             </div>
           </td>
           <td class="d-none"><%= eachTestimonial._id %></td>

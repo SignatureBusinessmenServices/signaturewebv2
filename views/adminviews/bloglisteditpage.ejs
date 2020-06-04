@@ -26,6 +26,7 @@
     <div class="row mt-4 px-3">
 
       <table id="paginationNumbers" class="table" width="100%">
+
       <thead>
         <tr>
           <th class="th-sm">Date
@@ -47,10 +48,13 @@
           <td><strong><%= eachBlog.date %></strong></td>
           <td><strong><%= eachBlog.title %></strong></td>
           <td><%= eachBlog.headline %></td>
-          <td>
-            <div class="row text-center">
+          <td style="width: 20%">
 
-            <a class="btn btn-primary btn-sm" href="/blogupdate/<%= eachBlog._id %>">Edit</a>
+            <div class="text-center">
+            <a class="btn btn-primary btn-xs m-1" style="width: 70px;" href="/blogupdate/<%= eachBlog._id %>">Edit</a>
+            <% if (user.isSuperAdmin == "Yes") { %>
+            <a class="btn btn-danger btn-xs delete-blog m-1" style="width: 70px;" href="" data-id="<%= eachBlog._id %>">Delete</a>
+            <% } %>
             </div>
           </td>
           <td class="d-none"><%= eachBlog._id %></td>

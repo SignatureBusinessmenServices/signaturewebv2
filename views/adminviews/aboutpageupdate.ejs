@@ -1,0 +1,314 @@
+  <div class="container" id="homepageform">
+    <div class="col-12 mt-5 pt-5">
+      <div>
+        <h3 class="feature-title"><strong>Edit About Us Page</strong></h3>
+        <div class="">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/adminpage">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Edit About Us Page</li>
+            </ol>
+          </nav>
+          <%- typeof msg != 'undefined' ? msg: '' %>
+        </div>
+      </div>
+    </div>
+
+  <form method="post" action="/editaboutpage" enctype="multipart/form-data" id="mainform">
+
+    <div class="col-lg-12 col-md-12 mb-3">
+      <div class="pb-5 mb-5">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Engish</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-arabic" role="tab" aria-controls="nav-profile" aria-selected="false">Arabic</a>
+          </div>
+        </nav>
+
+        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+                <!--Grid row-->
+            <div class="row wow fadeIn mt-3">
+              <!--Grid column-->
+              <div class="col-lg-9 col-md-12">
+                <!--First row-->
+                <div class="row">
+                  <div class="col-12 text-left">
+                    <h3 title="Click to update information" class="mb-3 feature-title abouttitle boxsizingBorder"><input type="text" name="abouttitle" value="<%= about.abouttitle %>" style="border: 0; font-weight: bold; cursor: pointer"></h3>
+                    <p title="Click to update information" class="mb-3 aboutdescription grey-text boxsizingBorder"><textarea class="summernote2 grey-text" name="aboutdescription" rows="10" cols="100%" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- about.aboutdescription %></textarea></p>
+
+                    <div>
+                    <input id="aboutimageinput" name="aboutimage" style="display: none" type="file">
+                    <div title="Click to change image" id="aboutimage"><img class="mb-3 img-fluid" id="preview-aboutimageinput" src="uploads/aboutimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%; cursor: pointer"></div>
+                    </div>
+
+                    <h5 title="Click to update information" class="mb-3 feature-title aboutsubtitle"><input type="text" name="aboutsubtitle" value="<%= about.aboutsubtitle %>" style="border: 0; font-weight: bold; cursor: pointer"></h5>
+                    <p title="Click to update information" class="mb-3 grey-text aboutsubtitledesctiption"><textarea class="summernote2 grey-text" name="aboutsubtitledesctiption" rows="13" cols="100%" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- about.aboutsubtitledesctiption %></textarea></p>
+
+                    <h5 title="Click to update information" class="mb-3 feature-title aboutteamtitle"><input type="text" name="aboutteamtitle" value="<%= about.aboutteamtitle %>" style="border: 0; font-weight: bold; cursor: pointer"></h5>
+                    <p title="Click to update information" class="mb-3 grey-text aboutteamdescription"><textarea class="summernote2 grey-text" name="aboutteamdescription" rows="13" cols="100%" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- about.aboutteamdescription %></textarea></p>
+
+                    <!--Grid row-->
+                    <div class="row wow fadeIn">
+
+                      <!--Grid column-->
+                      <div class="col-lg-6 col-md-12 px-4">
+
+                        <!--First row-->
+                        <div class="row">
+                          <div class="col-12 text-center">
+
+                            <div>
+                            <input id="teamimage1input" name="teamimage1" style="display: none" type="file">
+                            <div title="Click to change image" id="teamimage1"><img class="mb-3 img-fluid" id="preview-teamimage1input" src="uploads/teamimage1.jpg" style="object-fit: cover; border-radius: 10px; height: 300px; width: 300px; cursor: pointer"></div>
+                            </div>
+                            <h5 title="Click to update information" class="mb-0 feature-title team1name boxsizingBorder"><textarea class="summernote2" type="text" name="team1name" style="border: 0; cursor: pointer"><%- about.team1name %></textarea></h5>
+                            <p title="Click to update information" class="grey-text team1title boxsizingBorder"><textarea class="summernote2" type="text" name="team1title" style="border: 0; cursor: pointer"><%- about.team1title %></textarea></p>
+
+                          </div>
+                        </div>
+                        <!--/First row-->
+
+                      </div>
+                      <!--/Grid column-->
+
+                      <!--Grid column-->
+                        <div class="col-lg-6 col-md-12">
+
+                          <!--First row-->
+                          <div class="row">
+
+                            <div class="col-12 text-center">
+
+                              <div>
+                              <input id="teamimage2input" name="teamimage2" style="display: none" type="file">
+                              <div title="Click to change image" id="teamimage2"><img class="mb-3 img-fluid" id="preview-teamimage2input" src="uploads/teamimage2.jpg" style="object-fit: cover; border-radius: 30px; height: 300px; width: 300px; cursor: pointer"></div>
+                              </div>
+                              <h5 title="Click to update information" class="mb-0 feature-title team2name boxsizingBorder"><textarea class="summernote2" type="text" name="team2name" style="border: 0; cursor: pointer"><%- about.team2name %></textarea></h5>
+                              <p title="Click to update information" class="grey-text team2title boxsizingBorder"><textarea class="summernote2" type="text" name="team2title" style="border: 0; cursor: pointer"><%- about.team2title %></textarea></p>
+
+                            </div>
+                          </div>
+                          <!--/First row-->
+                        </div>
+                        <!--/Grid column-->
+                    </div>
+                    <!-- Grid Row -->
+
+
+                  </div>
+                </div>
+                <!--/First row-->
+              </div>
+
+              <!--/Grid column-->
+
+              <!--Grid column-->
+
+                <div class="col-lg-3 col-md-12">
+                  <div class="card rounded p-3">
+                  <!--First row-->
+                  <div class="row">
+
+                    <div class="col-12 text-center justify-content-center">
+                      <a>  <h5 class="mb-3 feature-title black-text"><strong>Contact Us</strong></h5>
+                      <i class="mb-3 fas fa-phone sd-bar-icons"></i> <a/>
+                      <p title="Click to update information" class="mb-3 grey-text"><textarea name="contact" class="summernote2 text-center" rows="8" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- sidebars.contact %></textarea></p>
+                      <a class="mb-3 btn btn-blue btn-sm rounded p-2">Contact Us</a>
+                    </div>
+                  </div>
+                  <!--/First row-->
+                  <!-- Second Row -->
+                  <div class="row">
+                    <div class="col-12 text-center">
+                      <hr class="my-3">
+                      <a> <h5 class="mb-3 feature-title black-text"><strong>Business Set-up?</strong></h5>
+                      <i class="mb-3 fas fa-handshake sd-bar-icons"></i> </a>
+                      <p title="Click to update information" class="mb-3 grey-text"><textarea name="setup" class="summernote2 text-center" rows="12" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- sidebars.setup %></textarea></p>
+                      <a class="mb-3 btn btn-blue btn-sm rounded p-2">Find Out More</a>
+                    </div>
+                  </div>
+                  <!-- Second Row -->
+                  <!-- Third Row -->
+                  <div class="row">
+
+                    <div class="col-12 text-center">
+                      <hr class="my-3">
+                      <a> <h5 class="mb-3 feature-title black-text"><strong>Serviced Offices</strong></h5>
+                      <i class="mb-3 fas fa-key sd-bar-icons"></i> </a>
+                      <p title="Click to update information" class="mb-3 grey-text"><textarea name="service" class="summernote2 text-center" rows="12" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- sidebars.service %></textarea></p>
+                      <a class="mb-3 btn btn-blue btn-sm rounded p-2">Find Out More</a>
+                    </div>
+                  </div>
+
+                  <!-- Third Row -->
+                  </div>
+                </div>
+                <!--/Grid column-->
+
+              </div>
+              </div>
+
+
+
+
+              <!-- ARABIC -->
+
+              <div class="tab-pane fade show" id="nav-arabic" role="tabpanel" aria-labelledby="nav-arabic-tab">
+
+                          <!--Grid row-->
+                      <div class="row wow fadeIn mt-3" dir="rtl">
+                        <!--Grid column-->
+                        <div class="col-lg-9 col-md-12 text-right">
+
+                          <!--First row-->
+                          <div class="row">
+                            <div class="col-12 text-right">
+                              <h3 title="Click to update information" class="mb-3 feature-title arabouttitle boxsizingBorder"><input type="text" name="arabouttitle" dir="rtl" value="<%= about.arabouttitle %>" style="border: 0; font-weight: bold; cursor: pointer"></h3>
+                              <p title="Click to update information" class="mb-3 araboutdescription grey-text boxsizingBorder"><textarea class="summernote2 grey-text" dir="rtl" name="araboutdescription" rows="10" cols="100%" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- about.araboutdescription %></textarea></p>
+
+                              <div>
+                              <input id="aboutimageinput" name="aboutimage" style="display: none" type="file">
+                              <div title="Click to change image" id="aboutimage"><img class="mb-3 img-fluid" id="preview-aboutimageinput" src="uploads/aboutimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%; cursor: pointer"></div>
+                              </div>
+
+                              <h5 title="Click to update information" class="mb-3 feature-title araboutsubtitle"><input type="text" name="araboutsubtitle" dir="rtl" value="<%= about.araboutsubtitle %>" style="border: 0; font-weight: bold; cursor: pointer"></h5>
+                              <p title="Click to update information" class="mb-3 grey-text araboutsubtitledescription"><textarea class="summernote2 grey-text" dir="rtl" name="araboutsubtitledescription" rows="13" cols="100%" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- about.araboutsubtitledescription %></textarea></p>
+
+                              <h5 title="Click to update information" class="mb-3 feature-title araboutteamtitle"><input type="text" name="araboutteamtitle" dir="rtl" value="<%= about.araboutteamtitle %>" style="border: 0; font-weight: bold; cursor: pointer"></h5>
+                              <p title="Click to update information" class="mb-3 grey-text araboutteamdescription"><textarea class="summernote2 grey-text" dir="rtl" name="araboutteamdescription" rows="13" cols="100%" style="border: 0; color: grey; width: 100%; cursor: pointer"><%- about.araboutteamdescription %></textarea></p>
+
+                              <!--Grid row-->
+                              <div class="row wow fadeIn">
+
+                                <!--Grid column-->
+                                <div class="col-lg-6 col-md-12 px-4">
+
+                                  <!--First row-->
+                                  <div class="row">
+                                    <div class="col-12 text-center">
+
+                                      <div>
+                                      <input id="teamimage1input" name="teamimage1" style="display: none" type="file">
+                                      <div title="Click to change image" id="teamimage1"><img class="mb-3 img-fluid" id="preview-teamimage1input" src="uploads/teamimage1.jpg" style="object-fit: cover; border-radius: 30px; height: 300px; width: 300px; cursor: pointer"></div>
+                                      </div>
+                                      <h5 title="Click to update information" class="mb-0 feature-title arteam1name boxsizingBorder"><textarea class="summernote2" type="text" name="arteam1name" style="border: 0; cursor: pointer"><%- about.arteam1name %></textarea></h5>
+                                      <p title="Click to update information" class="grey-text arteam1title boxsizingBorder"><textarea class="summernote2" type="text" name="arteam1title" style="border: 0; cursor: pointer"><%- about.arteam1title %></textarea></p>
+
+
+                                    </div>
+                                  </div>
+                                  <!--/First row-->
+
+                                </div>
+                                <!--/Grid column-->
+
+                                <!--Grid column-->
+                                  <div class="col-lg-6 col-md-12">
+
+                                    <!--First row-->
+                                    <div class="row">
+
+                                      <div class="col-12 text-center">
+
+                                        <div>
+                                        <input id="teamimage2input" name="teamimage2" style="display: none" type="file">
+                                        <div title="Click to change image" id="teamimage2"><img class="mb-3 img-fluid" id="preview-teamimage2input" src="uploads/teamimage2.jpg" style="object-fit: cover; border-radius: 30px; height: 300px; width: 300px; cursor: pointer"></div>
+                                        </div>
+                                        <h5 title="Click to update information" class="mb-0 feature-title arteam2name boxsizingBorder"><textarea class="summernote2" type="text" name="arteam2name" style="border: 0; cursor: pointer"><%- about.arteam2name %></textarea></h5>
+                                        <p title="Click to update information" class="grey-text arteam2title boxsizingBorder"><textarea class="summernote2" type="text" name="arteam2title" style="border: 0; cursor: pointer"><%- about.arteam2title %></textarea></p>
+
+                                      </div>
+                                    </div>
+                                    <!--/First row-->
+                                  </div>
+                                  <!--/Grid column-->
+                              </div>
+                              <!-- Grid Row -->
+
+                            </div>
+                          </div>
+                          <!--/First row-->
+                        </div>
+
+                        <!--/Grid column-->
+
+                        <!--Grid column-->
+
+                          <div class="col-lg-3 col-md-12">
+                            <div class="card rounded p-3">
+                            <!--First row-->
+                            <div class="row">
+
+                              <div class="col-12 text-center justify-content-center">
+                                <a>  <h5 class="mb-3 feature-title black-text"><strong>
+                                تواصل معنا
+                                </strong></h5>
+                                <i class="mb-3 fas fa-phone sd-bar-icons"></i> <a/>
+                                <p title="Click to update information" class="mb-3 grey-text"><textarea name="arcontact" class="summernote2 text-center" rows="8" style="border: 0; color: grey; width: 100%; cursor: pointer"> <%- sidebars.arcontact %> </textarea></p>
+                                <a class="mb-3 btn btn-blue btn-sm rounded p-2">
+                                تواصل معنا
+
+                                </a>
+                              </div>
+                            </div>
+                            <!--/First row-->
+                            <!-- Second Row -->
+                            <div class="row">
+                              <div class="col-12 text-center">
+                                <hr class="my-3">
+                                <a> <h5 class="mb-3 feature-title black-text"><strong>
+                                   تأسيس الشركات
+                                </strong></h5>
+                                <i class="mb-3 fas fa-handshake sd-bar-icons"></i> </a>
+                                <p title="Click to update information" class="mb-3 grey-text"><textarea name="arsetup" class="summernote2 text-center" rows="12" style="border: 0; color: grey; width: 100%; cursor: pointer;"> <%- sidebars.arsetup %> </textarea></p>
+                                <a class="mb-3 btn btn-blue btn-sm rounded p-2">
+                                  لمعرفة المزيد
+                                </a>
+                              </div>
+                            </div>
+                            <!-- Second Row -->
+                            <!-- Third Row -->
+                            <div class="row">
+
+                              <div class="col-12 text-center">
+                                <hr class="my-3">
+                                <a> <h5 class="mb-3 feature-title black-text"><strong>
+                                   تأسيس الشركات
+                                </strong></h5>
+                                <i class="mb-3 fas fa-key sd-bar-icons"></i> </a>
+                                <p title="Click to update information" class="mb-3 grey-text"><textarea name="arservice" class="summernote2 text-center" rows="12" style="border: 0; color: grey; width: 100%; cursor: pointer;"> <%- sidebars.arservice %> </textarea></p>
+                                <a class="mb-3 btn btn-blue btn-sm rounded p-2">
+                                  لمعرفة المزيد
+                                </a>
+                              </div>
+                            </div>
+
+                            <!-- Third Row -->
+                            </div>
+                          </div>
+                          <!--/Grid column-->
+                      </div>
+
+
+
+              </div>
+            </div>
+            <hr class="mt-4 mb-2" style="background-color: #4285f4 ">
+            <button class="btn btn-primary my-3 mr-4 float-right rounded">Update</button>
+            <a href="/adminpage" class="btn btn-danger my-3 mx-1 float-right rounded">Cancel</a>
+          </div>
+        </div>
+
+
+
+  </form>
+  </div>
+
+
+
+<!-- PREVIEW PAGE -->
+
+   <!-- Section 2 -->

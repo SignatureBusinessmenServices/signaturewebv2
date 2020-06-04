@@ -76,38 +76,14 @@
           <!--First row-->
           <div class="row">
             <div class="col-12 text-right">
-              <h3 class="mb-3 feature-title"><strong>
-              مركز الإمضاء لخدمات الأعمال
-              </strong></h3>
-              <p class="mb-3 grey-text">
-                يقع مركز الإمضاء لخدمات الأعمال في موقع مرموق بمنى مكاتب فندق الفيرمونت بشارع الشيخ زايد في قلب مدينة دبي. حيث توجد محطة توقف الميترو عند مبنى مركز التجارة العالمي ومركز معارض دبي.
-              </p>
-              <h5 class="mb-3 feature-title"><strong>
-                الموقع
-              </strong></h5>
-              <img class="mb-3 img-fluid" src="img/location_article.png" style="width: 90%"></img>
-              <p class="mb-3 grey-text">
-                يتيح موقعنا (الظاهر في الصورة أعلاه) والذي يقع بالقرب من مركز دبي المالي وأبراج الامارات التنقل بسهولة، حيث سيسعد عملاؤك بجميع الخدمات القريبة من فنادق ومطاعم وأماكن ترفيهية.              </p>
-              <h5 class="mb-3 feature-title"><strong>
-                المكاتب
-              </strong></h5>
-              <img class="mb-3 img-fluid" src="img/offices_article1.png" style="width: 90%"></img>
-              <p class="mb-3 grey-text">
-                تتوزع مكاتبنا على ثلاثة أدوار بمناظر مختلفة لمدينة دبي. لدينا مكتب مناسب لكل شركة سواء كانت كبيرة أو صغيرة. جميع مكاتبنا مجهزة كليا وخاصة.
-              </br></br>
-
-                لدينا خيارات متعددة لأحجام مكاتب مختلفة حيث جميع الأسعار شاملة.
-              </br></br>
-
-              لا يوجد رسوم إضافية لخدمات لا تحتاجها، ستدفع فقط ما تحتاجه وتستخدمه ليكون باستطاعتك إدارة عملك بسهولة.
-              </br></br>
-
-                <!-- In addition, all office units are Dubai Economic Department (DED) compliant.
-               </br></br> -->
-
-                قم بالاطلاع على خيارتنا الواسعة من المكاتب المجهزة وتواصل معنا اليوم لحجز مكتبك.
-              </br></br>
-              </p>
+              <h3 class="mb-3 feature-title"><strong> <%= services.arservicetitle %> </strong></h3>
+              <p class="mb-3 grey-text"> <%- services.arservicedescription %> </p>
+              <h5 class="mb-3 feature-title"><strong> <%= services.arlocationtitle %> </strong></h5>
+              <img class="mb-3 img-fluid" src="uploads/locationimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%"></img>
+              <p class="mb-3 grey-text"> <%- services.arlocationdescription %> </p>
+              <h5 class="mb-3 feature-title"><strong> <%= services.arofficetitle %> </strong></h5>
+              <img class="mb-3 img-fluid" src="uploads/officeimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%"></img>
+              <p class="mb-3 grey-text"> <%- services.arofficedescription %> </p>
             </div>
           </div>
           <!--/First row-->
@@ -128,7 +104,7 @@
                 </strong></h5>
                 <i class="mb-3 fas fa-phone sd-bar-icons"></i> <a/>
                 <p class="mb-3 grey-text">
-                  اتصل بنا اليوم لمعرفة كيف يمكن لـ نحن أن يساعد عملك في دبي.
+                  <%- sidebars.arcontact %>
                 </p>
                 <a data-toggle="modal" data-target="#message" class="mb-3 btn btn-blue btn-sm rounded p-2">
                 تواصل معنا
@@ -146,7 +122,7 @@
                 </strong></h5>
                 <i class="mb-3 fas fa-handshake sd-bar-icons"></i> </a>
                 <p class="mb-3 grey-text">
-                  مع خبرة أكثر من 17 سنوات في سوق دبي حتما سنساعدك في تأسيس شركتك.
+                  <%- sidebars.arsetup %>
                 </p>
                 <a target="" href="/ar/setup" class="mb-3 btn btn-blue btn-sm rounded p-2">
                   لمعرفة المزيد
@@ -174,9 +150,9 @@
           تواصل معنا
       </strong></h5></a>
     </div>
-      <div class="row col-12">
+      <div class="row col-12 text-center">
         <div class="col-md-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image1"><img src="img/serviced2.jpg" alt="placeholder" class="img-fluid"></a>
+          <a href="" target="" data-toggle="modal" data-target="#image1"><img src="uploads/gallery1.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -187,7 +163,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced2.jpg" alt="placeholder" class="img-fluid">
+                   <img src="uploads/gallery1.jpg" alt="placeholder" class="img-fluid">
               </div>
             </div>
           </div>
@@ -195,7 +171,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image2"><img src="img/serviced4.jpg" alt="placeholder" class="img-fluid"></a>
+          <a href="" target="" data-toggle="modal" data-target="#image2"><img src="uploads/gallery2.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -206,7 +182,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced4.jpg" class="img-fluid">
+                   <img src="uploads/gallery2.jpg" class="img-fluid">
               </div>
             </div>
           </div>
@@ -214,7 +190,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image3"><img src="img/serviced5.jpg" alt="placeholder" class="img-fluid"></a>
+          <a href="" target="" data-toggle="modal" data-target="#image3"><img src="uploads/gallery3.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -225,7 +201,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced5.jpg" class="img-fluid">
+                   <img src="uploads/gallery3.jpg" class="img-fluid">
               </div>
             </div>
           </div>
@@ -234,9 +210,9 @@
 
       </div>
 
-      <div class="row col-12">
-        <div class="col-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image4"><img src="img/serviced6.jpg" alt="placeholder" class="img-fluid"></a>
+      <div class="row col-12 text-center">
+        <div class="col-md-4 mb-3">
+          <a href="" target="" data-toggle="modal" data-target="#image4"><img src="uploads/gallery4.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -247,15 +223,15 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced6.jpg" alt="placeholder" class="img-fluid">
+                   <img src="uploads/gallery4.jpg" alt="placeholder" class="img-fluid">
               </div>
             </div>
           </div>
         </div>
         </div>
 
-        <div class="col-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image5"><img src="img/serviced3.jpg" alt="placeholder" class="img-fluid"></a>
+        <div class="col-md-4 mb-3">
+          <a href="" target="" data-toggle="modal" data-target="#image5"><img src="uploads/gallery5.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -266,15 +242,15 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced3.jpg" class="img-fluid">
+                   <img src="uploads/gallery5.jpg" class="img-fluid">
               </div>
             </div>
           </div>
         </div>
         </div>
 
-        <div class="col-4 mb-3">
-          <a href="" target="" data-toggle="modal" data-target="#image6"><img src="img/serviced6.jpg" alt="placeholder" class="img-fluid"></a>
+        <div class="col-md-4 mb-3">
+          <a href="" target="" data-toggle="modal" data-target="#image6"><img src="uploads/gallery6.jpg" alt="placeholder" class="img-fluid gallery"></a>
           <div class="modal fade" id="image6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -285,7 +261,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span id="close-btn" aria-hidden="true">&times;</span>
                  </button>
-                   <img src="img/serviced6.jpg" class="img-fluid">
+                   <img src="uploads/gallery6.jpg" class="img-fluid">
               </div>
             </div>
           </div>

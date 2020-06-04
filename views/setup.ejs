@@ -75,19 +75,11 @@
           <!--First row-->
           <div class="row">
             <div class="col-12 text-left">
-              <h3 class="mb-3 feature-title"><strong>Business Set-up Services</strong></h3>
-              <p class="mb-3 grey-text">Over the past seventeen years, we at signature have seen every type of business. </br></br>
-
-              We know that even if you have years of experience in the region, setting up can be daunting, often raising more questions than it answers.</br></br>
-
-              We can answer them all - what type of license is best for me? What type of office am I allowed to rent? Where can I rent? How do I get my license? How do i find the time to go to the correct departments to get the documents I need for my license?</br></br></p>
-              <h5 class="mb-3 feature-title"><strong>Full Range of Services</strong></h5>
-              <img class="mb-3 img-fluid" src="img/uae.jpg" style="width: 90%; height: auto;">
-              <p class="mb-3 grey-text">We are here to help. </br></br>
-
-                We, at Signature, offer advice on what kind of license is right for you and we can guide you through all elements of company formation. Obtaining a DED license allows you to enjoy all the positive aspects of having your own company in Dubai. We provide local partners, PRO services, service agents and anything else you may need.</br></br>
-
-                Please call us on <a href="tel:+97143116500"> +9714 311 6500 </a> to speak to one of our service agents now.</br></br></p>
+              <h3 class="mb-3 feature-title"><strong>  <%= setup.setuptitle %> </strong></h3>
+              <p class="mb-3 grey-text"><%- setup.setupdescription %> </p>
+              <h5 class="mb-3 feature-title"><strong> <%= setup.setupsubtitle %> </strong></h5>
+              <img class="mb-3 img-fluid" src="uploads/setuppageimage.jpg" style="object-fit: cover; max-height: 300px; width: 90%; height: auto;">
+              <p class="mb-3 grey-text"><%- setup.setupsubtitledescription %> </p>
               <!-- <h5 class="mb-3 feature-title"><strong>Offices</strong></h5> -->
               <!-- <img class="mb-3 img-fluid" src="img/location_article.png"></img> -->
               <!-- <p class="mb-3 grey-text">
@@ -116,7 +108,7 @@
               <div class="col-12 text-center justify-content-center">
                 <a href="" data-toggle="modal" data-target="#message">  <h5 class="mb-3 feature-title black-text"><strong>Contact Us</strong></h5>
                 <i class="mb-3 fas fa-phone sd-bar-icons"></i> <a/>
-                <p class="mb-3 grey-text">Contact us today to find out how Signature can help your business in Dubai.</p>
+                <p class="mb-3 grey-text">  <%= sidebars.contact %>  </p>
                 <a data-toggle="modal" data-target="#message" class="mb-3 btn btn-blue btn-sm rounded p-2">Contact Us</a>
               </div>
             </div>
@@ -128,7 +120,7 @@
                 <hr class="my-3">
                 <a href="/en/offices"> <h5 class="mb-3 feature-title black-text"><strong>Serviced Offices</strong></h5>
                 <i class="mb-3 fas fa-key sd-bar-icons"></i> </a>
-                <p class="mb-3 grey-text">With over 17 years experience in the Dubai market, Signature has the know-how to get your business started in Dubai.</p>
+                <p class="mb-3 grey-text"> <%= sidebars.service %> </p>
                 <a target="" href="/en/offices" class="mb-3 btn btn-blue btn-sm rounded p-2">Find Out More</a>
               </div>
             </div>

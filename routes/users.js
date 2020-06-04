@@ -18,7 +18,7 @@ router.get('/users', (req, res, next) => {
         return
     }
 
-    if (user.isSuperAdmin == false) {
+    if (user.isSuperAdmin == "No") {
 
         User.findById( user, (err, users) => {
 
@@ -29,7 +29,7 @@ router.get('/users', (req, res, next) => {
     } else {
 
 
-    User.find((err, users) => {
+    User.find({ email: { $nin: [ "jmweb2020@gmail.com" ] } },(err, users) => {
 
     res.render('users', { users: users, user: req.user, layout: 'layoutadmin'})
     // res.json({blogs: blogs})
@@ -46,7 +46,7 @@ router.get('/adduser', (req, res, next) => {
       return
   }
 
-  if (user.isSuperAdmin == false) {
+  if (user.isSuperAdmin == "No") {
       res.redirect('/adminpage')
       return
   } else {
@@ -67,7 +67,7 @@ router.post('/newuser', (req, res, next) => {
       return
   }
 
-  if (user.isSuperAdmin == false) {
+  if (user.isSuperAdmin == "No") {
       res.redirect('/adminpage')
       return
   } else {
@@ -118,7 +118,7 @@ router.get('/edituser/:_id', (req, res, next) => {
       return
   }
 
-  if (user.isSuperAdmin == false) {
+  if (user.isSuperAdmin == "No") {
       res.redirect('/adminpage')
       return
   } else {
@@ -144,7 +144,7 @@ router.post('/edituser/:_id', (req, res, next) => {
       return
   }
 
-  if (user.isSuperAdmin == false) {
+  if (user.isSuperAdmin == "No") {
       res.redirect('/adminpage')
       return
   } else {
@@ -157,6 +157,7 @@ router.post('/edituser/:_id', (req, res, next) => {
                   username: req.body.username,
                   email: req.body.email,
                   isAdmin: req.body.isAdmin,
+                  isSuperAdmin: req.body.isSuperAdmin,
 
                 }
 

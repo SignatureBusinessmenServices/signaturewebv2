@@ -5,7 +5,7 @@ const UserSign = new mongoose.Schema({
     email: {type:String, default:'', unique: true},
     password: { type: String, default: ''},
     isAdmin: { type: String, default: 'Yes'},
-    isSuperAdmin: { type: Boolean, default: false},
+    isSuperAdmin: { type: String, default: 'No'},
     timestamp: {type:Date, default: Date.now},
     nonce: { type: String, default: null},
     passwordResetTime: { type: Date, default: null}

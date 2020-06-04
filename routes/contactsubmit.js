@@ -25,7 +25,7 @@ router.post('/en/contactsubmit', (req, res, next) => {
 
     const mailOptions = {
       from: '"Signature" <signature.ae>',
-      to: 'jmweb2020@gmail.com',
+      to: 'info@signature.ae, accounts@signature.ae, support@signature.ae',
       subject: 'Inquiry - Signature',
       html: '<h3>Name: '  + req.body.name + '</h3>' + '<h3>Email: '  + req.body.email + '</h3>' + '<h3>Phone: '  + req.body.phoneNumber + '</h3>' + '<h3>Message: ' + req.body.message + '</h3>',
 
@@ -76,7 +76,7 @@ router.post('/ar/contactsubmit', (req, res, next) => {
 
     const mailOptions = {
       from: '"Signature" <signature.ae>',
-      to: 'jmweb2020@gmail.com',
+      to: 'info@signature.ae,accounts@signature.ae,support@signature.ae',
       subject: 'Inquiry - Signature',
       html: '<h3>Name: '  + req.body.name + '</h3>' + '<h3>Email: '  + req.body.email + '</h3>' + '<h3>Phone: '  + req.body.phoneNumber + '</h3>' + '<h3>Message: ' + req.body.message + '</h3>',
 

@@ -277,4 +277,12 @@ router.post('/editblog/:_id', (req, res, next) => {
     })
   })
 
+  router.delete('/blog/:id', (req, res, next) => {
+    const id = {_id: req.params.id}
+
+    blog.remove(id, (err, data) => {
+      res.redirect('back')
+    })
+  })
+
 module.exports = router

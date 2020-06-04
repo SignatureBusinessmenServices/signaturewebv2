@@ -24,7 +24,24 @@
           <!--Grid row-->
     <div class="mt-4 px-3">
 
-      <table id="paginationNumbers" class="table" width="100%">
+      <nav>
+        <div class="row">
+        <div class="col-4 p-0 nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Active</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-arabic" role="tab" aria-controls="nav-profile" aria-selected="false">Inactive</a>
+
+        </div>
+        <div class="col-8 p-0 nav nav-tabs " id="nav-tab" role="tablist">
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-arabic" role="tab" aria-controls="nav-profile" aria-selected="false"></a>
+        </div>
+        </div>
+      </nav>
+
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
+      <table class="table" width="100%">
       <thead>
         <tr>
           <th class="th-sm">Name
@@ -40,9 +57,13 @@
 
         </tr>
       </thead>
+
       <tbody>
+
         <% users.forEach(function( eachUser) { %>
+          <% if (eachUser.isAdmin == "Yes") { %>
         <tr>
+
           <td><strong><%= eachUser.username %></strong></td>
           <td><%= eachUser.email %></td>
           <td><%= eachUser.timestamp %></td>
@@ -53,10 +74,68 @@
             </div>
           </td>
           <td class="d-none"><%= eachUser._id %></td>
+
         </tr>
+          <% } %>
           <% }) %>
+
       </tbody>
+
       </table>
+
+    </div>
+
+    <div class="tab-pane fade show" id="nav-arabic" role="tabpanel" aria-labelledby="nav-arabic-tab">
+
+      <table class="table" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Name
+          </th>
+          <th class="th-sm">Username
+          </th>
+          <th class="th-sm">Created On
+          </th>
+          <th class="th-sm">Action
+          </th>
+          <th class="th-sm d-none">Id
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% users.forEach(function( eachUser) { %>
+          <% if (eachUser.isAdmin == "No") { %>
+        <tr>
+
+          <td><strong><%= eachUser.username %></strong></td>
+          <td><%= eachUser.email %></td>
+          <td><%= eachUser.timestamp %></td>
+          <td>
+            <div class="row text-center">
+
+            <a class="btn btn-primary btn-sm" href="/edituser/<%= eachUser._id %>">Edit</a>
+            </div>
+          </td>
+          <td class="d-none"><%= eachUser._id %></td>
+
+        </tr>
+        <% } %>
+        <% }) %>
+
+      </tbody>
+
+      </table>
+
+    </div>
+
+
+
+
+
+    </div>
   </div>
 
 

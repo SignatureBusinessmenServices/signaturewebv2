@@ -13,46 +13,13 @@
           <div class="row">
             <div class="col-12 text-right">
               <h3 class="mb-3 feature-title">
-                <strong>
-                  من نحن
-                </strong></h3>
-              <p class="mb-3 grey-text">
-                فلسفتنا بسيطة في الإمضاء لخدمات الأعمال - معيارنا هو تقديم خدمة استثنائية لعملائنا من خلال موقعنا المتمركز في وسط المدينة وخدماتنا التي تقدم أفضل مساعدة لأعمالك.
-              </br> </br>
-                تعمل سيغنتشر منذ أكثر من 17 عامًا ، حيث تقدم الخدمات للشركات في دبي وخارجها في موقعنا في برج السلام المرموق والمركزي في شارع الشيخ زايد. موقعنا في قلب الحي التجاري والمالي في دبي ، إلى جانب الخدمة يعني يعني أن العمل مع التوقيع سهل دائمًا.
-              </p>
-              <img class="mb-3 img-fluid" src="img/about_us.jpg"></img>
-              <h5 class="my-3 feature-title"><strong>
-                لماذا عليك اختيار الإمضاء لخدمات الأعمال؟
-              </strong></h5></br>
-              <p class="mb-3 ml-4 grey-text">
-                موقع رائع وعنوان راقي في دبي.
-              </br></br>
-
-                متمركز في قلب الأسواق المالية والتجارية.
-              </br></br>
-
-                موقع مقابل لمبنى مركز التجارة العالمي حيث أيضا تقع محطة توقف المترو لمحطة مركز التجارة العالمي (الخط الأحمر).
-              </br></br>
-
-                خدمات مصممة لك شخصيا - حيث سنقوم بتفصيل خدمات تناسبك أنت فقط.
-              </br></br>
-
-                لا وجود لفترة أدنى للحجز حيث يمكنك الحجز لمدة ساعة واحدة أو سنة!
-              </br></br>
-
-                جميع الباقات شاملة - لا إضافات مالية ولا مفاجآت.
-              </br></br>
-
-                 توفر غرف اجتماعات ومطاعم ومسابح ومركز صحي ونادي رياضي.
-              </br></br>
-              </p>
-              <h5 class="mb-3 feature-title"><strong>
-                تعرف على فريق العمل
-              </strong></h5>
-                <p class="mb-3 grey-text">
-                  نحن نفخر بأفضل فريق عمل والذي سيحدث تغييرا إيجابيا في تعاملاتك مع عملائك. تعرف على فريقنا أدناه وتواصل معنا لنعرف كيف يمكننا مساعدتك.
-                </p>
+              <strong> <%= about.arabouttitle %> </strong></h3>
+              <p class="mb-3 grey-text"> <%- about.araboutdescription %> </p>
+              <img class="mb-3 img-fluid" src="uploads/aboutimage.jpg" style="width: 90%"></img>
+              <h5 class="my-3 feature-title"><strong><%= about.araboutsubtitle %></strong></h5>
+              <p class="mb-3 ml-4 grey-text"> <%- about.araboutsubtitledescription %> </p>
+              <h5 class="mb-3 feature-title"><strong> <%= about.araboutteamtitle %> </strong></h5>
+                <p class="mb-3 grey-text"> <%- about.araboutteamdescription %> </p>
             </div>
           </div>
           <!--/First row-->
@@ -67,13 +34,10 @@
               <div class="row">
                 <div class="col-12 text-center">
 
-                  <img class="mb-3" src="img/Pamela_Profile_Edit_AboutUs.jpg"></img>
-                  <h5 class="mb-0 feature-title"><strong>
-                    بام ستيفين
-                  </strong></h5>
-                  <p class="grey-text">
-                    فريق خدمات العملاء
-                  </p>
+                  <img class="mb-3" src="uploads/teamimage1.jpg" style="border-radius: 30px; height: 300px; width: 300px;"></img>
+                  <h5 class="mb-0 feature-title"><strong> <%- about.arteam1name %> </strong></h5>
+                  <p class="grey-text"> <%- about.arteam1title %> </p>
+
 
                 </div>
               </div>
@@ -90,13 +54,9 @@
 
                   <div class="col-12 text-center">
 
-                    <img class="mb-3" src="img/Zoe_Profile_Edited_AboutUs.jpg"></img>
-                    <h5 class="mb-0 feature-title"><strong>
-                      زوي فولكنر
-                    </strong></h5>
-                    <p class="grey-text">
-                      فريق خدمات العملاء
-                    </p>
+                    <img class="mb-3" src="uploads/teamimage2.jpg" style="border-radius: 30px; height: 300px; width: 300px;"></img>
+                    <h5 class="mb-0 feature-title"><strong> <%- about.arteam2name %> </strong></h5>
+                    <p class="grey-text"> <%- about.arteam2title %> </p>
 
                   </div>
                 </div>
@@ -122,9 +82,7 @@
               تواصل معنا
               </strong></h5>
               <i class="mb-3 fas fa-phone sd-bar-icons"></i> <a/>
-              <p class="mb-3 grey-text">
-                اتصل بنا اليوم لمعرفة كيف يمكن لـ نحن أن يساعد عملك في دبي.
-              </p>
+              <p class="mb-3 grey-text"><%- sidebars.arcontact %></p>
               <a data-toggle="modal" data-target="#message" class="mb-3 btn btn-blue btn-sm rounded p-2">
               تواصل معنا
               </a>
@@ -140,9 +98,7 @@
                  تأسيس الشركات
               </strong></h5>
               <i class="mb-3 fas fa-handshake sd-bar-icons"></i> </a>
-              <p class="mb-3 grey-text">
-                مع خبرة أكثر من 17 سنوات في سوق دبي حتما سنساعدك في تأسيس شركتك.
-              </p>
+              <p class="mb-3 grey-text"><%- sidebars.arsetup %></p>
               <a target="" href="/ar/setup" class="mb-3 btn btn-blue btn-sm rounded p-2">
                 لمعرفة المزيد
               </a>
@@ -163,9 +119,7 @@
                 مركز الإمضاء لخدمات الأعمال
               </strong></h5>
               <i class="mb-3 fas fa-key sd-bar-icons"></i> </a>
-              <p class="mb-3 grey-text">
-                مع خبرة أكثر من 17 سنوات في سوق دبي حتما سنساعدك في تأسيس شركتك.
-              </p>
+              <p class="mb-3 grey-text"><%- sidebars.arservice %></p>
               <a target="" href="/ar/offices" class="mb-3 btn btn-blue btn-sm rounded p-2">
                   لمعرفة المزيد
               </a>

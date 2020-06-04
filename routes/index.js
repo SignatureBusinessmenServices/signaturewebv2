@@ -5,6 +5,12 @@ const blog = require('../models/blogs')
 const Testimonial = require('../models/testimonials')
 const Settings = require('../models/settings')
 const Home = require('../models/homepage')
+const Services = require('../models/servicepage')
+const Sidebar = require('../models/sidebar')
+const Setup = require('../models/setuppage')
+const Cms = require('../models/cmspage')
+const About = require('../models/aboutpage')
+const Faq = require('../models/faqspage')
 
 router.get('/', (req, res, next) => {
 
@@ -26,15 +32,27 @@ router.get('/en/offices', (req, res, next) => {
 
     Settings.findOne((err,settings) => {
 
-    res.render('offices', {layout: 'layouten', settings: settings})
+        Services.findOne((err,services) => {
+
+          Sidebar.findOne((err,sidebars) => {
+
+    res.render('offices', {layout: 'layouten', sidebars: sidebars,services: services, settings: settings})
   })
+})
+})
 })
 
 router.get('/en/setup', (req, res, next) => {
 
       Settings.findOne((err,settings) => {
 
-    res.render('setup', {layout: 'layouten', settings: settings})
+          Setup.findOne((err,setup) => {
+
+            Sidebar.findOne((err,sidebars) => {
+
+    res.render('setup', {layout: 'layouten', setup: setup, settings: settings, sidebars: sidebars})
+  })
+})
   })
 })
 
@@ -42,8 +60,14 @@ router.get('/en/cms', (req, res, next) => {
 
     Settings.findOne((err,settings) => {
 
-    res.render('cms', {layout: 'layouten', settings: settings})
+      Cms.findOne((err,cms) => {
+
+        Sidebar.findOne((err,sidebars) => {
+
+    res.render('cms', {layout: 'layouten', cms: cms, sidebars: sidebars, settings: settings})
   })
+})
+})
 })
 
 router.get('/en/bloglist', (req, res, next) => {
@@ -84,8 +108,14 @@ router.get('/en/blog', (req, res, next)=>{
 router.get('/en/about', (req, res, next) => {
     Settings.findOne((err,settings) => {
 
-    res.render('about', {layout: 'layouten', settings: settings})
+      About.findOne((err,about) => {
+
+        Sidebar.findOne((err,sidebars) => {
+
+    res.render('about', {layout: 'layouten', about: about, sidebars: sidebars, settings: settings})
   })
+})
+})
 })
 
 // router.get('/en/testimonials', (req, res, next) => {
@@ -107,8 +137,14 @@ router.get('/en/testimonials', (req, res, next)=>{
 router.get('/en/faqs', (req, res, next) => {
     Settings.findOne((err,settings) => {
 
-    res.render('faqs', {layout: 'layouten', settings: settings})
+      Faq.findOne((err,faq) => {
+
+        Sidebar.findOne((err,sidebars) => {
+
+    res.render('faqs', {layout: 'layouten', faq: faq, sidebars: sidebars, settings: settings})
   })
+})
+})
 })
 
 
@@ -129,7 +165,13 @@ router.get('/ar/offices', (req, res, next) => {
 
       Settings.findOne((err,settings) => {
 
-    res.render('arviews/offices', {layout: 'layoutar', settings: settings})
+          Services.findOne((err,services) => {
+
+            Sidebar.findOne((err,sidebars) => {
+
+    res.render('arviews/offices', {layout: 'layoutar', sidebars: sidebars, services: services, settings: settings})
+  })
+})
   })
 })
 
@@ -137,15 +179,27 @@ router.get('/ar/setup', (req, res, next) => {
 
     Settings.findOne((err,settings) => {
 
-    res.render('arviews/setup', {layout: 'layoutar', settings: settings})
+        Setup.findOne((err,setup) => {
+
+          Sidebar.findOne((err,sidebars) => {
+
+    res.render('arviews/setup', {layout: 'layoutar', setup: setup, sidebars: sidebars, settings: settings})
   })
+})
+})
 })
 
 router.get('/ar/cms', (req, res, next) => {
 
       Settings.findOne((err,settings) => {
 
-    res.render('arviews/cms', {layout: 'layoutar', settings: settings})
+        Cms.findOne((err,cms) => {
+
+          Sidebar.findOne((err,sidebars) => {
+
+    res.render('arviews/cms', {layout: 'layoutar', cms: cms, sidebars: sidebars, settings: settings})
+  })
+})
   })
 })
 
@@ -161,7 +215,13 @@ router.get('/ar/about', (req, res, next) => {
 
     Settings.findOne((err,settings) => {
 
-    res.render('arviews/about', {layout: 'layoutar', settings: settings})
+      About.findOne((err,about) => {
+
+        Sidebar.findOne((err,sidebars) => {
+
+    res.render('arviews/about', {layout: 'layoutar', about: about,sidebars: sidebars, settings: settings})
+  })
+})
   })
 })
 
@@ -186,7 +246,13 @@ router.get('/ar/faqs', (req, res, next) => {
 
     Settings.findOne((err,settings) => {
 
-    res.render('arviews/faqs', {layout: 'layoutar', settings: settings})
+      Faq.findOne((err,faq) => {
+
+        Sidebar.findOne((err,sidebars) => {
+
+    res.render('arviews/faqs', {layout: 'layoutar', faq: faq, sidebars: sidebars, settings: settings})
+  })
+})
   })
 })
 

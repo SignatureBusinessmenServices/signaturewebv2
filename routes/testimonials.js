@@ -238,7 +238,13 @@ router.post('/edittestimonial/:_id', (req, res, next) => {
     })
   })
 
+  router.delete('/testimonial/:id', (req, res, next) => {
+    const id = {_id: req.params.id}
 
+    Testimonials.remove(id, (err, data) => {
+      res.redirect('back')
+    })
+  })
 
 
 module.exports = router
