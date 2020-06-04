@@ -46,9 +46,9 @@ router.get('/editservicepage', (req, res, next) => {
       return
   }
 
-  if (user.isAdmin == 'No') {
-      // res.redirect('/adminpage')
-      res.redirect('/admin')
+  if (user.isSuperAdmin == 'No') {
+      res.redirect('/adminpage')
+      // res.redirect('/admin')
       return
 
   } else {
