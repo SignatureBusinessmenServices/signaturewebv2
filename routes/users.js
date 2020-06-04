@@ -105,13 +105,10 @@ router.post('/newuser', (req, res, next) => {
     // })
 })
 }
-
 })
 
 // EDIT AND VIEW PAGE OF SPECIFIC USER
 router.get('/edituser/:_id', (req, res, next) => {
-
-
   const user = req.user
   if (user == null) {
       res.redirect('/admin')
@@ -132,6 +129,55 @@ router.get('/edituser/:_id', (req, res, next) => {
     // res.json({blogs: blogs})
   })
 }
+})
+
+// EDIT AND VIEW Profile OF SPECIFIC USER
+router.get('/editprofile', (req, res, next) => {
+
+  const user = req.user
+  if (user == null) {
+      res.redirect('/admin')
+      return
+  }
+
+  User.find(user, (err, users)=>{
+
+    res.render('editprofile', {users: users, user: user, layout: 'layoutadmin'})
+    // res.json({users: users})
+  })
+})
+
+// EDIT AND VIEW Profile OF SPECIFIC USER
+router.post('/editprofile', (req, res, next) => {
+
+  const user = req.user
+  if (user == null) {
+      res.redirect('/admin')
+      return
+  }
+
+  const id = {"_id" : req.user._id}
+
+  User.find((err, users) =>{
+
+    const password = req.body.password
+    const hashedPw = bcrypt.hashSync(password, 10)
+
+    const data = {
+      email : req.body.email,
+      username: req.body.username,
+      password: hashedPw,
+    }
+
+        User.findOneAndUpdate(id, data, {new: true}, (err, users)=>{
+
+    if (err)
+        return next(err)
+
+    res.redirect('back')
+    // res.json({users: users})
+  })
+})
 })
 
 // POST REQUEST OF EDIT USER

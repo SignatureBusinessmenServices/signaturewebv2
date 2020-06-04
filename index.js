@@ -136,6 +136,7 @@ app.use('/ar',express.static(path.join(__dirname, 'public')))
 app.use('/',express.static(path.join(__dirname, 'public')))
 app.use('/edituser',express.static(path.join(__dirname, 'public')))
 app.use('/testimonialupdate',express.static(path.join(__dirname, 'public')))
+app.use('/editprofile',express.static(path.join(__dirname, 'public')))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressLayouts)
