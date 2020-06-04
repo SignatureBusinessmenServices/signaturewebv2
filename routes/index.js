@@ -128,10 +128,13 @@ router.get('/en/testimonials', (req, res, next)=>{
 
     Testimonial.find((err, testimonials)=>{
 
-      res.render('testimonials', {testimonials: testimonials, layout: 'layouten', settings: settings})
+        Sidebar.findOne((err,sidebars) => {
+
+      res.render('testimonials', {testimonials: testimonials, sidebars: sidebars, layout: 'layouten', settings: settings})
       // res.json({blogs: blogs})
     }).sort({timestamp: -1}).limit(4)
   })
+})
 })
 
 router.get('/en/faqs', (req, res, next) => {
@@ -236,10 +239,13 @@ router.get('/ar/testimonials', (req, res, next)=>{
 
     Testimonial.find((err, testimonials)=>{
 
-      res.render('arviews/testimonials', {testimonials: testimonials, layout: 'layoutar', settings: settings})
+      Sidebar.findOne((err,sidebars) => {
+
+      res.render('arviews/testimonials', {testimonials: testimonials, sidebars: sidebars, layout: 'layoutar', settings: settings})
       // res.json({blogs: blogs})
     }).sort({timestamp: -1}).limit(4)
   })
+})
 })
 
 router.get('/ar/faqs', (req, res, next) => {
