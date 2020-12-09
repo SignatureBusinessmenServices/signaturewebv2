@@ -152,7 +152,8 @@ router.get('/en/faqs', (req, res, next) => {
 
 // NEW SIGNUP PAGE as of NOVEMBER 16, 2020
 router.get('/signup', (req, res, next) => {
-   res.send("")
+   // res.send("")
+   res.redirect('https://jmwebapps.com')
 })
 
 
