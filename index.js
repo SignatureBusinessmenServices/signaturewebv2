@@ -45,7 +45,8 @@ const faqspage = require('./routes/faqspage')
 
 
 
-mongoose.connect('mongodb+srv://jerome:mongodbuser1234@emails-nkbzd.mongodb.net/test?retryWrites=true&w=majority', {
+// mongoose.connect('mongodb+srv://jerome:mongodbuser1234@emails-nkbzd.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://jerome:mongodbuser1234@emails.nkbzd.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }, (err, data) => {
     if (err) {
         console.log('DB Connection Failed')
@@ -117,14 +118,14 @@ app.get('/sitemap.xml', function(req, res) {
   }
 })
 
-const http = require('http');
-const https = require("https"),
-  fs = require("fs");
-
-  const options = {
-    key: fs.readFileSync("/etc/letsencrypt/live/www.signature.ae/privkey.pem"),
-    cert: fs.readFileSync("/etc/letsencrypt/live/www.signature.ae/fullchain.pem"),
-  };
+// const http = require('http');
+// const https = require("https"),
+//   fs = require("fs");
+//
+//   const options = {
+//     key: fs.readFileSync("/etc/letsencrypt/live/www.signature.ae/privkey.pem"),
+//     cert: fs.readFileSync("/etc/letsencrypt/live/www.signature.ae/fullchain.pem"),
+//   };
 
 
 app.use('/en',express.static(path.join(__dirname, 'public')))
@@ -172,16 +173,16 @@ app.use('/', faqspage)
 
 // Redirect from http port 80 to https
 
-http.createServer(function (req, res) {
-    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-    res.end();
-}).listen(80);
+// http.createServer(function (req, res) {
+//     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+//     res.end();
+// }).listen(80);
 
 
 
-// app.listen(8000, '192.168.1.217')
+app.listen(80, '0.0.0.0')
 
 
-https.createServer(options, app).listen(443);
+// https.createServer(options, app).listen(443);
 
 console.log('Server Running...')
